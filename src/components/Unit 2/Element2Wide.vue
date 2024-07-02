@@ -27,10 +27,10 @@
             <source src="" type="video/mp4" showControl>
         </video>
         <div id="media2" class="media">
-            <div style="position:absolute; top: -30px; width: 100%; height: 100%; background-color: grey;"></div>
-            <iframe style="position: absolute; height: 100%; top: -30px;" frameBorder="0" scrolling="no" src="https://jefhans4.github.io/IsomerGame/"
+            <div style="position:absolute; top: -70px; width: 100%; height: 120%; background-color: grey;"></div>
+            <iframe style="position: absolute; height: 120%; top: -70px;" frameBorder="0" scrolling="no" src="https://jefhans4.github.io/IsomerGame/"
             width="100%" height="100%"></iframe>
-            <button style="position: absolute; right: 0%;" @click="closeVideo('media2')">X</button>
+            <button style="position: absolute; right: 10%; top: -70px" @click="closeVideo('media2')">X</button>
         </div>
        
 
@@ -88,9 +88,13 @@
                 width="100%" height="100%"></iframe>
             </div>
             <div class="page" id="page">
-                <div style="background-color: yellow;">
+                <div style="background-color: yellow; margin-bottom: 30px;">
                     <div style="color: black;">Insomer Game </div> 
                     <button style="border-radius: 30%; border: none;" @click="playVideo('media2')">Play</button>
+                </div>
+                <div style="background-color: yellow;">
+                    <div style="color: black;">Insomer Game </div> 
+                    <button style="border-radius: 30%; border: none;"><a href="https://jefhans4.github.io/IsomerGame/" target="_blank" style="text-decoration: none;">Play</a></button>
                 </div>
             </div>
         </div>
@@ -103,8 +107,7 @@
 <script>
 import { TresCanvas } from '@tresjs/core'
 
-export default{
-    
+export default {
     data(){
         return{
             count: 0,
@@ -125,11 +128,10 @@ export default{
                 case 39: 
                 self.next()// right
                 break;
-            }
-            e.preventDefault(); // prevent the default action (scroll / move caret)
+            } // prevent the default action (scroll / move caret)
         };
     },
-
+    
     methods:{
         ////playVideo() invokes the overlay area that has a video on top of it.
         playVideo(id){
@@ -160,7 +162,7 @@ export default{
             //var scrolled = (winScroll / height) * 100;
             //var totalWidth = screen.availWidth;
             var totalWidth = document.getElementById("slide").offsetWidth;
-            var scrolled = (window.screen.width <= window.screen.height) ? totalWidth / 4 : totalWidth / 1; //1 because the current slide has 4 pages. (4/2 = 2, 2-1=1)
+            var scrolled = (window.screen.width <= window.screen.height) ? totalWidth / 3 : totalWidth / 1; //1 because the current slide has 4 pages. (4/2 = 2, 2-1=1)
             document.getElementById("myBar").style.width = scrolled*this.count + "px";
             console.log(this.count)
         },
@@ -183,60 +185,42 @@ export default{
 
         scroll(position) {
             let el = document.getElementById("slide");
-            let width = document.getElementById("container").offsetWidth/2;
-            let pos = 0;
-            let id = setInterval(frame, 10);
-            let num = 10 - this.frame //put the total number of pages here
-            //let width = (screen.availWidth-160)*0.5;
-            let resize = num * width
-            let check = position == "reset" ? resize : width 
-            function frame() {
-                if (pos >= check) {
-                    clearInterval(id);
-                }
-                else {
-                    pos += 5;
-                    let leftDirection = 12;
-                    let rightDirection = 12;
-                    /*** if (window.screen.width < 425) {
-                        leftDirection = 9;
-                        rightDirection = 9;
-                    }
-                    else if (window.screen.width < 499) {
-                        leftDirection = 8.7;
-                        rightDirection = 8.2;
-                    }
-                    else if (window.screen.width < 1600) {
-                        leftDirection = 12;
-                        rightDirection = 12;
-                    }
-                    else if (window.screen.width <= 1920) {
-                        leftDirection = 12;
-                        rightDirection = 12;
-                    }
-                    else if (window.screen.width <= 2560){
-                        leftDirection = 14;
-                        rightDirection = 13.5;
+            if ((window.screen.width >= window.screen.height) 
+            && (window.innerWidth > 1300)) {
+                let width = document.getElementById("container").offsetWidth/2;
+                let pos = 0;
+                let id = setInterval(frame, 10);
+                let num = 10 - this.frame //put the total number of pages here
+                //let width = (screen.availWidth-160)*0.5;
+                let resize = num * width
+                let check = position == "reset" ? resize : width 
+                function frame() {
+                    if (pos >= check) {
+                        clearInterval(id);
                     }
                     else {
-                        leftDirection = 18;
-                        rightDirection = 17.5;
-                    } ***/
-                    if(position == 'next'){  
-                        el.scrollLeft +=  leftDirection
-                    }
-                    else{
-                        el.scrollLeft -= rightDirection
+                        pos += 5;
+                        if(position == 'next'){  
+                            el.scrollLeft +=  12;
+                        }
+                        else{
+                            el.scrollLeft -= 12;
+                        }
                     }
                 }
+                console.log(window.innerWidth);
             }
-            
-            console.log(position)
-            console.log(resize)
-            console.log(check)
-            console.log(width);
-            console.log(pos);
-            console.log(document.getElementById("container").offsetWidth/2)
+            else {
+                let page = document.getElementById("page").offsetWidth;
+                let width = window.innerWidth > 600 ? page * 2 : page;
+                if(position == 'next'){  
+                    el.scrollLeft += width;
+                }
+                else{
+                    el.scrollLeft -= width;
+                }
+                
+            }
         },
 
         resetScroll(){
@@ -281,7 +265,7 @@ export default{
                 }
             }
         },
-    }
+    },
 }
 
 </script>
