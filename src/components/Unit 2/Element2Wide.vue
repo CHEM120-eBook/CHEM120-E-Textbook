@@ -84,17 +84,9 @@
                 </p>
             </div>
             <div class="page" id="page">
-                <iframe frameBorder="0" scrolling="no" src="https://jefhans4.github.io/IsomerGame/"
-                width="100%" height="100%"></iframe>
-            </div>
-            <div class="page" id="page">
                 <div style="background-color: yellow; margin-bottom: 30px;">
-                    <div style="color: black;">Insomer Game </div> 
+                    <div style="color: black;">Isomer Game </div> 
                     <button style="border-radius: 30%; border: none;" @click="playVideo('media2')">Play</button>
-                </div>
-                <div style="background-color: yellow;">
-                    <div style="color: black;">Insomer Game </div> 
-                    <button style="border-radius: 30%; border: none;"><a href="https://jefhans4.github.io/IsomerGame/" target="_blank" style="text-decoration: none;">Play</a></button>
                 </div>
             </div>
         </div>

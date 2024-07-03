@@ -9,5 +9,3 @@ const app = createApp(App)
 app.use(router)
 app.use(Tres)
 app.mount('#app')
-
-app.config.globalProperties.window = window

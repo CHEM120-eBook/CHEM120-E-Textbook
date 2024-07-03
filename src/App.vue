@@ -1,43 +1,48 @@
 <template>
   <header>
     <nav>
-      <div id="mySidemenu" class="sidemenu">
-        <a href="javascript:void(0)" class="close" @click="closeSM">&times;</a>
-        <div class="sm-wrapper">
-          <div class="dropdown">
-            <a class="title" href="#" @click="openSubMenu('dropdown-content1')">Section 1</a>
-            <div class="dropdown-content" id="dropdown-content1">
-              <ul style="list-style-type: none; padding: 0;">
-                <li><router-link to="/unit1">Unit 1. Bonding, Introduction to Structural Representations</router-link></li>
-                <li><router-link to="/unit2">Unit 2. More Structural Representations and Isomers</router-link></li>
-                <li><router-link to="/unit3">Unit 3. </router-link></li>
-                <li><router-link to="/unit4">Unit 4. </router-link></li>
-                <li><router-link to="/">Unit 5. </router-link></li>
-                <li><router-link to="/">Unit 6. </router-link></li>
-                <li><router-link to="/">Unit 7. </router-link></li>
-                <li><router-link to="/">Unit 8. </router-link></li>
-                <li><router-link to="/">Unit 9. </router-link></li>
-                <li><router-link to="/">Unit 10. </router-link></li>
-              </ul>
+      <div style="display: flex; flex-direction: row;">
+        <div id="mySidemenu" class="sidemenu">
+          <a href="javascript:void(0)" class="close" @click="closeSM">&times;</a>
+          <div class="sm-wrapper">
+            <div class="dropdown">
+              <a class="title" href="#" @click="openSubMenu('dropdown-content1')">Section 1</a>
+              <div class="dropdown-content" id="dropdown-content1">
+                <ul style="list-style-type: none; padding: 0;">
+                  <li><router-link to="/unit1">Unit 1. Bonding, Introduction to Structural Representations</router-link></li>
+                  <li><router-link to="/unit2">Unit 2. More Structural Representations and Isomers</router-link></li>
+                  <li><router-link to="/unit3">Unit 3. </router-link></li>
+                  <li><router-link to="/unit4">Unit 4. </router-link></li>
+                  <li><router-link to="/">Unit 5. </router-link></li>
+                  <li><router-link to="/">Unit 6. </router-link></li>
+                  <li><router-link to="/">Unit 7. </router-link></li>
+                  <li><router-link to="/">Unit 8. </router-link></li>
+                  <li><router-link to="/">Unit 9. </router-link></li>
+                  <li><router-link to="/">Unit 10. </router-link></li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="dropdown">
-            <a class="title" href="#" @click="openSubMenu('dropdown-content2')">Section 2</a>
-            <div class="dropdown-content" id="dropdown-content2">
-              <ul style="list-style-type: none; padding: 0;">
-                <li><router-link to="/scroll">Unit 11.</router-link></li>
-                <li><router-link to="/scroll">Unit 12. </router-link></li>
-                <li><router-link to="/scroll">Unit 13. </router-link></li>
-              </ul>
+            <div class="dropdown">
+              <a class="title" href="#" @click="openSubMenu('dropdown-content2')">Section 2</a>
+              <div class="dropdown-content" id="dropdown-content2">
+                <ul style="list-style-type: none; padding: 0;">
+                  <li><router-link to="/scroll">Unit 11.</router-link></li>
+                  <li><router-link to="/scroll">Unit 12. </router-link></li>
+                  <li><router-link to="/scroll">Unit 13. </router-link></li>
+                </ul>
+              </div>
             </div>
+            <a class="title" href="#">Section 3</a>
           </div>
-          <a class="title" href="#">Section 3</a>
         </div>
+        <div id="pg-content">
+          <div class="open" @click="openSM">&#9776;</div>
+        </div>
+        <h3><router-link to="/" style="text-decoration: none; font-family: 'League Spartan', sans-serif;">Organic Chemistry E-Text</router-link></h3>
       </div>
-      <div id="pg-content">
-        <div class="open" @click="openSM">&#9776;</div>
-      </div>
-      <h3><router-link to="/" style="text-decoration: none; font-family: 'League Spartan', sans-serif;">Organic Chemistry E-Text</router-link></h3>
+      <a href="https://www.depauw.edu/academics/chemistry-and-biochemistry/" target="_blank" style="width: 10%;">
+        <img src="./assets/depauw-logo.png" style="width: 100%; cursor: pointer;" >
+      </a>
     </nav>
   </header>
 
@@ -61,7 +66,7 @@ export default{
         this.closeSM();
       }
       else {
-        if (window.screen.width <=725) {
+        if (window.screen.width <= 1032) {
           document.getElementById("mySidemenu").style.width ="350px";
           document.getElementById("pg-content").style.marginLeft = "0px";
         }
@@ -152,6 +157,7 @@ h3 {
 nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-left: 3vw !important;
 }
 /* SIDE MENU PART */
