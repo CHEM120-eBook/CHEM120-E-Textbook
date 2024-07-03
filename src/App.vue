@@ -40,7 +40,7 @@
         </div>
         <h3><router-link to="/" style="text-decoration: none; font-family: 'League Spartan', sans-serif;">Organic Chemistry E-Text</router-link></h3>
       </div>
-      <a href="https://www.depauw.edu/academics/chemistry-and-biochemistry/" target="_blank" style="width: 10%;">
+      <a href="https://www.depauw.edu/academics/chemistry-and-biochemistry/" target="_blank" style="width: 10%; margin-right: 2vw;">
         <img src="./assets/depauw-logo.png" style="width: 100%; cursor: pointer;" >
       </a>
     </nav>
@@ -67,8 +67,12 @@ export default{
       }
       else {
         if (window.screen.width <= 1032) {
-          document.getElementById("mySidemenu").style.width ="350px";
-          document.getElementById("pg-content").style.marginLeft = "0px";
+          if (window.screen.width <= 600) {
+            document.getElementById("mySidemenu").style.width ="350px";
+          }
+          else {
+            document.getElementById("mySidemenu").style.width ="450px"
+          }
         }
         else {
           document.getElementById("mySidemenu").style.width ="450px";
@@ -103,7 +107,7 @@ export default{
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "League Spartan", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -115,11 +119,6 @@ export default{
 
 header{
   background-color: rgb(255, 255, 130);
-}
-
-nav{
-  margin-left:5%;
-  display: flex;
 }
 
 nav a {
@@ -143,6 +142,8 @@ nav a.router-link-exact-active {
 }
 
 h3 {
+  display: flex;
+  align-items: center;
   margin: 3vw;
   font-size: 200% !important;
 }

@@ -226,18 +226,22 @@ export default {
                 return;
             }
             const posXStart = touchEvent.changedTouches[0].clientX;
-            addEventListener('touchend', (touchEvent) => this.touchEndMethod(touchEvent, posXStart), {once: true});
+            const posYStart = touchEvent.changedTouches[0].clientY;
+            addEventListener('touchend', (touchEvent) => this.touchEndMethod(touchEvent, posXStart, posYStart), {once: true});
         },
 
-        touchEndMethod (touchEvent, posXStart) {
+        touchEndMethod (touchEvent, posXStart, posYStart) {
             if (touchEvent.changedTouches.length !== 1) { // Only care if one finger is used
                 return;
             }
             const posXEnd = touchEvent.changedTouches[0].clientX;
-            if (posXStart < posXEnd) {
-                this.previous(); // swipe right
-            } else if (posXStart > posXEnd) {
-                this.next(); // swipe left
+            const posYEnd = touchEvent.changedTouches[0].clientY;
+            if (Math.abs(posYEnd - posYStart) <= 100) {
+                if (posXStart < posXEnd) {
+                    this.previous(); // swipe right
+                } else if (posXStart > posXEnd) {
+                    this.next(); // swipe left
+                }
             }
         },
 
