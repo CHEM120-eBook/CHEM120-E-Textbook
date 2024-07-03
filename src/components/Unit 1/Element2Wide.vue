@@ -97,7 +97,7 @@
                 <p><strong>Learning Goal:</strong></p>
                 <textarea placeholder="Enter what you expect to learn from this course."/>
             </div>
-            <div class="page" id="page">
+            <div class="page" id="page3">
                 <p><strong>Bonding</strong></p>
                 <p>
                     Atoms are made of a nucleus that contains protons and neutrons and orbiting around that nucleus are electrons. 
@@ -114,7 +114,7 @@
                 <p>These elements follow specific patterns when they make covalent bonds with each other.
                     For reasons we will understand more fully later, the elements</p>
             </div>
-            <div class="page" id="page">
+            <div class="page" id="page4">
                 <div style="display: flex; justify-content: center; margin: 30px; background: none" @click="playVideo('overlay'); playVideo('media2')">
                     <div class="elemtal-chart" style="height:54%; width: 50%; display: flex; flex-direction: column; align-items: center; cursor: pointer;">
                         <img src="@/assets/Unit1-PeriodicTable.webp" style="width:100%;">
@@ -270,11 +270,12 @@ export default {
         return{
             count: 0,
             direction: 'forward',
-            frame: 2
+            frame: 2,
+            intWinSize: window.innerWidth
         }
     },
     created(){
-        var self = this;
+        let self = this;
         //var slide = setInterval(()=>this.slideLoop(this.direction),2000)
         window.addEventListener('scroll', this.handleScroll);
         document.onkeydown = function(e) {
@@ -286,11 +287,34 @@ export default {
                 case 39: 
                 self.next()// right
                 break;
-            } // prevent the default action (scroll / move caret)
+            } 
         };
+        
+        window.addEventListener('resize',() => {this.resizeAdjust()})
     },
     
     methods:{
+        resizeAdjust() {
+            let el = document.getElementById("page3")
+            let el1 = document.getElementById("page4")
+            el.scrollIntoView({ behavior: "instant", block: "center", inline: "start" });
+            el1.scrollIntoView({ behavior: "instant", block: "center", inline: "end" });
+        },
+
+        resizeAdjust2() {
+            let el = document.getElementById("slide")
+            let el1 = document.getElementById("page3")
+            let ab = parseFloat(el1.getBoundingClientRect().right)
+            let cd = parseFloat(el1.getBoundingClientRect().top)
+            el.scroll({
+                top: cd, 
+                left: ab,
+                behavior: "smooth"
+            }
+
+            ); 
+        },
+
         ////playVideo() invokes the overlay area that has a video on top of it.
         playVideo(id){
             document.getElementById(id).style.display = "flex";
@@ -427,6 +451,7 @@ export default {
                 }
             }
         },
+
     },
 }
 
