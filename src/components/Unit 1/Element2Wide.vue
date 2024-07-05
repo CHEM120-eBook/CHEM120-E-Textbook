@@ -348,9 +348,7 @@ export default {
         },
 
         previous() {
-            let pageArr = document.getElementsByClassName("page");
-            let limit = window.screen.width >= window.screen.height && window.innerWidth > 600 ? pageArr.length : pageArr.length/2;
-            if(this.count <= limit && this.count > 0){ //12 because the current slide has 12 pages
+            if(this.count > 0){ //12 because the current slide has 12 pages
                 this.count--
                 this.scroll("previous")
             }
@@ -359,8 +357,8 @@ export default {
 
         next() {
             let pageArr = document.getElementsByClassName("page");
-            let limit = window.screen.width >= window.screen.height && window.innerWidth > 600 ? pageArr.length : pageArr.length/2;
-            if(this.count < limit && this.count >= 0){
+            let limit = window.screen.width >= window.screen.height && window.innerWidth > 600 ? pageArr.length/2 : pageArr.length;
+            if(this.count < limit){
                 this.count++
                 this.scroll("next")
             }
