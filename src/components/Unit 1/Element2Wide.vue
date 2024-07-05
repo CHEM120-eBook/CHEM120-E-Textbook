@@ -46,7 +46,7 @@
         <p class="title">
             Unit 1. Bonding, Introduction to Structural Representations
         </p>
-        <div id="slide" v-if="!gridEnabled" @touchstart="touchStartMethod" @mousedown="mouseDownMethod" @keyup.left="next()" @click="isElementXPercentInViewport">
+        <div id="slide" v-if="!gridEnabled" @touchstart="touchStartMethod" @mousedown="mouseDownMethod" @keyup.left="next()">
             <div class="page" id="page1">
                 <p style="margin-top: 27px;" >
                     Throughout the semester, we will incorporate scientist spotlights highlighting scientists 
@@ -289,30 +289,28 @@ export default {
                 break;
             } 
         };
-        
-        window.addEventListener('resize',() => {this.resizeAdjust()})
+        window.addEventListener('resize', () => {this.resizeAdjust()})        
     },
     
     methods:{
         resizeAdjust() {
-            let el = document.getElementById("page3")
-            let el1 = document.getElementById("page4")
-            el.scrollIntoView({ behavior: "instant", block: "center", inline: "start" });
-            el1.scrollIntoView({ behavior: "instant", block: "center", inline: "end" });
-        },
-
-        resizeAdjust2() {
-            let el = document.getElementById("slide")
-            let el1 = document.getElementById("page3")
-            let ab = parseFloat(el1.getBoundingClientRect().right)
-            let cd = parseFloat(el1.getBoundingClientRect().top)
-            el.scroll({
-                top: cd, 
-                left: ab,
-                behavior: "smooth"
+            let pageArr = document.getElementsByClassName("page");
+            if (window.screen.width >= window.screen.height && window.innerWidth > 600)  {
+                pageArr[this.count * 2].scrollIntoView({ 
+                    behavior: "instant", 
+                    block: "start", 
+                    inline: "start" });
+                pageArr[this.count * 2 + 1].scrollIntoView({ 
+                    behavior: "instant", 
+                    block: "start", 
+                    inline: "end" });
             }
-
-            ); 
+            else {
+                pageArr[this.count].scrollIntoView({ 
+                    behavior: "instant", 
+                    block: "start", 
+                    inline: "start" });
+            }
         },
 
         ////playVideo() invokes the overlay area that has a video on top of it.
@@ -350,18 +348,22 @@ export default {
         },
 
         previous() {
-            if(this.count <= 12 && this.count > 0){ //12 because the current slide has 12 pages
+            let pageArr = document.getElementsByClassName("page");
+            let limit = window.screen.width >= window.screen.height && window.innerWidth > 600 ? pageArr.length : pageArr.length/2;
+            if(this.count <= limit && this.count > 0){ //12 because the current slide has 12 pages
                 this.count--
+                this.scroll("previous")
             }
-            this.scroll("previous")
             this.handleScroll()
         },
 
         next() {
-            if(this.count < 12 && this.count >= 0){ //12 because the current slide has 12 pages
+            let pageArr = document.getElementsByClassName("page");
+            let limit = window.screen.width >= window.screen.height && window.innerWidth > 600 ? pageArr.length : pageArr.length/2;
+            if(this.count < limit && this.count >= 0){
                 this.count++
+                this.scroll("next")
             }
-            this.scroll("next")
             this.handleScroll()
         },
 
@@ -394,7 +396,7 @@ export default {
             }
             else {
                 let page = document.getElementById("page").offsetWidth;
-                let width = window.innerWidth > 600 ? page * 2 : page;
+                let width = (window.innerWidth > 600) && (window.screen.width > window.screen.height) ? page * 2 : page;
                 if(position == 'next'){  
                     el.scrollLeft += width;
                 }
@@ -661,7 +663,7 @@ nav a.router-link-exact-active {
 }
 
 .excercise {
-    margin:30px auto; 
+    margin:30px 4%; 
     min-width: 90%; 
     cursor: pointer;
 }

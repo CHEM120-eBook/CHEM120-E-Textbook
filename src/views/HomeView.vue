@@ -1,6 +1,6 @@
 <template>
   <div class="home" style="color:white; height: 100%;">
-    <p>Put other componnts here.</p>
+    <p>Put other components here.</p>
     <p></p>
   </div>
 </template>
