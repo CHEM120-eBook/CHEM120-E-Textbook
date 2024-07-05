@@ -69,15 +69,15 @@
                     over the next few classes. But first, we must learn about bonding and structural representations of molecules.
                 </p>
             </div>
-            <div class="page" id="page">
+            <div class="page" id="page2">
                 <div style="display: flex; flex-direction: column; min-height: 10vh;">
                     <p>
                         Deena did a podcast describing her motivation for her research:
                     </p>
-                    <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                         <img src="@/assets/Unit1-DeenaWalker.jpg" style="float:left; max-width:20%">
+                    <div class="podcast">
+                        <img src="@/assets/Unit1-DeenaWalker.jpg">
                         <iframe frameBorder="0" scrolling="no" src="https://playlist.megaphone.fm/?e=PPY5510118240"
-                        width="70%"></iframe>
+                        width="60%" height=""></iframe>
                     </div>
                     <p style="margin: 10px;">
                         When anxiety begins to overtake her, biology student Deena Walker begins to worry she'll end up just like her mentally ill sister.
@@ -137,7 +137,7 @@
                      more electron than they started with.
                 </p>
             </div>
-            <div class="page" id="page">
+            <div class="page" id="page5">
                 <p>
                     Covalent bonding is like two people sharing a drink. Sharing creates a bond between them. The same is true for atoms sharing electrons. 
                     The sharing holds the atoms together; it bonds them.
@@ -153,7 +153,7 @@
                     </div>
                 </div>
             </div>
-            <div class="page" id="page">
+            <div class="page" id="page6">
                 <p style="margin-bottom: 30px;">
                     We could take this analogy further. If the one of the people is much larger than the other they could take the drink entirely for themselves. 
                     This can actually make a strong bond too since the smaller person will be after the larger one to try to get some of the drink too. This is like an ionic bond.
@@ -171,7 +171,7 @@
                     valence electrons it starts with (from the periodic table). Hydrogen makes 1 bond.
                 </p>
             </div>
-            <div class="page" id="page">
+            <div class="page" id="page7">
                 <p style="text-indent: 0%;">
                 </p>
                 <img src="@/assets/Unit1-BondSymbolTable.webp" style="margin:30px 25%; width: 50%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media5')">
@@ -187,7 +187,7 @@
                     Sometimes they are referred to as non-bonding electrons or as “lone pairs.”
                 </p>
             </div>
-            <div class="page" id="page">
+            <div class="page" id="page8">
                 <p><strong>Representing structures</strong></p>
                 <p>
                     There are multiple ways that chemists represent a molecule. We saw the Lewis dot structure or Lewis Structure 
@@ -204,14 +204,11 @@
                     molecules, let's say with 8 or more carbon atoms, it becomes cumbersome to write out every atom and every bond. 
                 </p>
                 <p>
-                    So chemists have developed ways of writing less while still representing 
-                </p>
-            </div>
-            <div class="page" id="page">
-                <p style="text-indent: 0%;">
-                    how the atoms are connected. One of 
+                    So chemists have developed ways of writing less while still representing how the atoms are connected. One of 
                     these ways is the condensed structure.
                 </p>
+            </div>
+            <div class="page" id="page9">
                 <p>
                     None of these ways of representing the molecule (molecular formula, Lewis structure, condensed structure) are completely 
                     accurate representations. While the Lewis and condensed structures show us how the atoms are connected, they don’t 
@@ -223,7 +220,7 @@
                     mental image of the 3D molecule. Understanding the 3D nature of these molecules is important for fully understanding their chemistry.
                 </p>
             </div>
-            <div class="page" id="page">
+            <div class="page" id="page10">
                 <p><strong>Now you try</strong></p>
                 <p>Write Lewis dot structures for the following compounds.</p>
                 <img class="excercise" src="@/assets/Unit1LewisDot (1).webp" @click="playVideo('overlay'); playVideo('media6')">
@@ -231,7 +228,7 @@
                 <p>Identify which atoms below do not have the normal number of bonds.</p>
                 <img class="excercise" src="@/assets/Unit1NumberOfBonds.webp" @click="playVideo('overlay'); playVideo('media7')">
             </div>
-            <div class="page" id="page">
+            <div class="page" id="page11">
                 <p>Convert the following Lewis structures into condensed structures.</p>
                 <img class="excercise" src="@/assets/Unit1LewisToCondensed.webp" @click="playVideo('overlay'); playVideo('media8')">
                 <p>
@@ -239,7 +236,7 @@
                 </p>
                 <img class="excercise" src="@/assets/Unit1CondensedToLewis.webp" @click="playVideo('overlay'); playVideo('media9')">
             </div>
-            <div class="page" id="page">
+            <div class="page" id="page12">
                 <p style="margin-bottom: 10px;"><strong>Wrap-up</strong></p>
                 <p class="wrap-up-head">Review It</p>
                 <p class="wrap-up-content">Take a look at the learning goals you had for this unit. Did you achieve them?</p>
@@ -295,7 +292,7 @@ export default {
     methods:{
         resizeAdjust() {
             let pageArr = document.getElementsByClassName("page");
-            if (window.screen.width >= window.screen.height && window.innerWidth > 600)  {
+            if (window.screen.width >= window.screen.height && window.innerWidth > 800)  {
                 pageArr[this.count * 2].scrollIntoView({ 
                     behavior: "instant", 
                     block: "start", 
@@ -343,7 +340,7 @@ export default {
             //var scrolled = (winScroll / height) * 100;
             //var totalWidth = screen.availWidth;
             var totalWidth = document.getElementById("slide").offsetWidth;
-            var scrolled = (window.screen.width <= window.screen.height) ? totalWidth / (pageArr.length - 1) : totalWidth / (pageArr.length/2 - 1); //5 because the current slide has 12 pages. (12/2 = 6, 6-1=5)
+            var scrolled = (window.screen.width <= window.screen.height) ? totalWidth / (pageArr.length - 1) : totalWidth / (pageArr.length/2 - 1); 
             document.getElementById("myBar").style.width = scrolled*this.count + "px";
             console.log(this.count)
         },
@@ -395,7 +392,7 @@ export default {
                 console.log(window.innerWidth);
             }
             else {
-                let page = document.getElementById("page").offsetWidth;
+                let page = document.getElementById("page1").offsetWidth;
                 let width = (window.innerWidth > 600) && (window.screen.width > window.screen.height) ? page * 2 : page;
                 if(position == 'next'){  
                     el.scrollLeft += width;
@@ -461,6 +458,15 @@ export default {
 </script>
 
 <style scoped>
+#page2 > div > div > img {
+    max-width:130px;
+}
+
+.podcast {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-around;
+}
 
 /* Header */
 #app {
@@ -520,7 +526,7 @@ nav a.router-link-exact-active {
     font-family: "League Spartan", sans-serif;
     margin: 1vw;
     color:aliceblue; 
-    font-size: 2.5vw;
+    font-size: 230%;
 }
 
 .nav-buttons {
@@ -591,10 +597,6 @@ nav a.router-link-exact-active {
   display: none;
 }
 
-#slide > div > img {
-  max-width: 50%;
-}
-
 #slide > div > div {
   padding:2%;
   color: #FFFFFF;
@@ -613,7 +615,8 @@ nav a.router-link-exact-active {
 
 #slide > div > div > p {
     text-indent: 0%;
-    font-size: 1.5vh;
+    margin: 10px;
+    font-size: 100%;
     font-family: "League Spartan",sans-serif;
     text-align: justify;
 }
@@ -647,7 +650,7 @@ nav a.router-link-exact-active {
 
 #slide > .page > p {
     margin: 12.5px;
-    font-size: 2.5vh;
+    font-size: 120%;
     font-family:"League Spartan",sans-serif;
     text-align: justify;
 }
@@ -686,7 +689,38 @@ nav a.router-link-exact-active {
         width: 100px;
     }
 }
+@media screen and (min-height: 900px) {
+    #slide > .page > p {
+        font-size: 180%;
+    }
+    #slide > div > div > p {
+        font-size: 150%;
 
+    }
+}
+
+@media screen and (min-height: 1200px) {
+    #slide > .page > p {
+        font-size: 210%;
+    }
+    #slide > div > div > p {
+        font-size: 180%;
+
+    }
+}
+
+@media screen and (min-width: 2300px) {
+    #page2 > div > div > img {
+        display: none;
+    }
+    #slide > .page > p {
+        font-size: 250%;
+    }
+    #slide > div > div > p {
+        font-size: 200%;
+
+    }
+}
 /*** @media screen and (min-width: 426px) and (max-width:499px) {
     #slide {
         width: 85.5%;
@@ -703,15 +737,6 @@ nav a.router-link-exact-active {
 
     .progress-container {
         width: 120%;
-    }
-}
-
-@media screen and (min-width: 1920px) {
-    #slide {
-        width: 137%;
-    }
-    .progress-container {
-        width: 137%;
     }
 }
 

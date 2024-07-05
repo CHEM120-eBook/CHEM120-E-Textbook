@@ -255,11 +255,10 @@ nav {
 
 @media screen and (max-width: 600px) {
   h3 {
-    margin: 5vw;
-    font-size: 6vw !important;
+    font-size: 150% !important;
   }
   .open {
-    font-size: 3vw !important;
+    font-size: 100% !important;
   }
 
   .title {
@@ -267,10 +266,22 @@ nav {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 365px) {
   h3 {
+    font-size: 130% !important;
+  }
+  .open {
+    font-size: 100% !important;
+  }
 
-    font-size: 2vw !important;
+  .title {
+    min-width: 300px;
+  }
+}
+
+@media screen and (min-width: 2300px) {
+  h3 {
+    font-size: 300% !important;
   }
 }
 </style>
