@@ -337,12 +337,13 @@ export default {
         //it increases/decreases the area of a green bar that indicates where the reader is at wihtin
         //the whole slide.
         handleScroll() {
+            let pageArr = document.getElementsByClassName("page");
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             //var scrolled = (winScroll / height) * 100;
             //var totalWidth = screen.availWidth;
             var totalWidth = document.getElementById("slide").offsetWidth;
-            var scrolled = (window.screen.width <= window.screen.height) ? totalWidth / 11 : totalWidth / 5; //5 because the current slide has 12 pages. (12/2 = 6, 6-1=5)
+            var scrolled = (window.screen.width <= window.screen.height) ? totalWidth / (pageArr.length - 1) : totalWidth / (pageArr.length/2 - 1); //5 because the current slide has 12 pages. (12/2 = 6, 6-1=5)
             document.getElementById("myBar").style.width = scrolled*this.count + "px";
             console.log(this.count)
         },
@@ -357,12 +358,13 @@ export default {
 
         next() {
             let pageArr = document.getElementsByClassName("page");
-            let limit = window.screen.width >= window.screen.height && window.innerWidth > 600 ? pageArr.length/2 : pageArr.length;
+            let limit = window.screen.width >= window.screen.height && window.innerWidth > 600 ? pageArr.length / 2 - 1 : pageArr.length - 1;
             if(this.count < limit){
                 this.count++
                 this.scroll("next")
             }
             this.handleScroll()
+            console.log(pageArr.length);
         },
 
         scroll(position) {
