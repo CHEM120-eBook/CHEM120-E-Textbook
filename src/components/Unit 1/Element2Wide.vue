@@ -111,20 +111,23 @@
                     Since organic chemistry is often defined as the chemistry of carbon compounds, carbon will be central to our studies. Other elements commonly found in organic compounds are 
                     hydrogen, oxygen, nitrogen, and the halogens (fluorine, chlorine, bromine, and iodine). We will also occasionally see sulfur and phosphorous.
                 </p>
-                <p>These elements follow specific patterns when they make covalent bonds with each other.
-                    For reasons we will understand more fully later, the elements</p>
+                <P>Common elements in organic chemistry: C, H, O, N, F, Cl, Br, I</P>
             </div>
             <div class="page" id="page4">
-                <div style="display: flex; justify-content: center; margin: 30px; background: none" @click="playVideo('overlay'); playVideo('media2')">
-                    <div class="elemtal-chart" style="height:54%; width: 50%; display: flex; flex-direction: column; align-items: center; cursor: pointer;">
-                        <img src="@/assets/Unit1-PeriodicTable.webp" style="width:100%;">
-                        <h6 style="font-family: 'League Spartan', sans-serif; color: black;">
-                            Common elements in organic chemistry: C, H, O, N, F, Cl, Br, I
-    ​                    </h6>
+                <div style="display:flex; color: black; flex-direction: row; background: none; width: 100%;" @click="playVideo('overlay'); playVideo('media2')">
+                    <div class="elemtal-chart" style="cursor: pointer; display: flex; align-items: center; justify-items: center;">
+                        <img src="@/assets/Unit1-PeriodicTable.webp" style="width:80%; margin: 20px;">
                     </div>
+                    <p style="margin: 12.5px; font-size: 120%; font-family:'League Spartan',sans-serif; text-align: justify; max-width: 50% !important; ">
+                        These elements follow specific patterns when they make covalent bonds with each other.
+                         For reasons we will understand more fully later, the elements we will be working with 
+                        (except for H) want to have 8 valence electrons (electrons potentially able to make bonds). 
+                        Hydrogen wants to have 2 valence electrons. 
+                    </p>
                 </div>
-                <p>
-                    we will be working with 
+                <p style="float: right;">
+                    These elements follow specific patterns when they make covalent bonds with each other.
+                    For reasons we will understand more fully later, the elements we will be working with 
                     (except for H) want to have 8 valence electrons (electrons potentially able to make bonds). 
                     Hydrogen wants to have 2 valence electrons. 
                 </p>
@@ -158,18 +161,20 @@
                     We could take this analogy further. If the one of the people is much larger than the other they could take the drink entirely for themselves. 
                     This can actually make a strong bond too since the smaller person will be after the larger one to try to get some of the drink too. This is like an ionic bond.
                 </p>
-                <div style="display: flex; justify-content: space-evenly; background-color: aliceblue;">
-                    <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png" style="width:25%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media3')">
-                    <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png" style="width:25%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media4')">
+                <div style="display: flex; flex-direction: row; background:none;">
+                    <div style="display: flex; flex-direction: column; align-items: center; background-color: aliceblue; justify-content: space-around;">
+                        <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png" style="width:50%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media3')">
+                        <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png" style="width:50%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media4')">
+                    </div>
+                    <p style="margin:0; color: black; font-size: 120%; font-family:'League Spartan',sans-serif; text-align: justify; max-width: 50% !important; ">
+                        It is possible for two atoms to share more electrons with each other, always in pairs. 
+                        We will see single bonds (1 electron shared from each atom), double bonds (2 electrons 
+                        shared from each atom for 4 total), and triple bonds (3 electrons shared from each atom 
+                        for 6 total). Since for every bond the atom gets an extra electron and each atom wants to 
+                        get a total of 8 valence electrons, the number of bonds each atom makes is 8 minus the number of 
+                        valence electrons it starts with (from the periodic table). Hydrogen makes 1 bond.
+                    </p>
                 </div>
-                <p style="margin-top: 30px;">
-                    It is possible for two atoms to share more electrons with each other, always in pairs. 
-                    We will see single bonds (1 electron shared from each atom), double bonds (2 electrons 
-                    shared from each atom for 4 total), and triple bonds (3 electrons shared from each atom 
-                    for 6 total). Since for every bond the atom gets an extra electron and each atom wants to 
-                    get a total of 8 valence electrons, the number of bonds each atom makes is 8 minus the number of 
-                    valence electrons it starts with (from the periodic table). Hydrogen makes 1 bond.
-                </p>
             </div>
             <div class="page" id="page7">
                 <p style="text-indent: 0%;">
