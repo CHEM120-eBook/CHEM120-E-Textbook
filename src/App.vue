@@ -6,7 +6,7 @@
           <a href="javascript:void(0)" class="close" @click="closeSM">&times;</a>
           <div class="sm-wrapper">
             <div class="dropdown">
-              <a class="title" href="#" @click="openSubMenu('dropdown-content1')">Section 1</a>
+              <div class="section-title" @click="openSubMenu('dropdown-content1')">Section 1</div>
               <div class="dropdown-content" id="dropdown-content1">
                 <ul style="list-style-type: none; padding: 0;">
                   <li><router-link to="/unit1">Unit 1. Bonding, Introduction to Structural Representations</router-link></li>
@@ -23,16 +23,16 @@
               </div>
             </div>
             <div class="dropdown">
-              <a class="title" href="#" @click="openSubMenu('dropdown-content2')">Section 2</a>
+              <div class="section-title" href="#" @click="openSubMenu('dropdown-content2')">Section 2</div>
               <div class="dropdown-content" id="dropdown-content2">
                 <ul style="list-style-type: none; padding: 0;">
-                  <li><router-link to="/scroll">Unit 11.</router-link></li>
-                  <li><router-link to="/scroll">Unit 12. </router-link></li>
-                  <li><router-link to="/scroll">Unit 13. </router-link></li>
+                  <li><router-link to="/">Unit 11.</router-link></li>
+                  <li><router-link to="/">Unit 12. </router-link></li>
+                  <li><router-link to="/">Unit 13. </router-link></li>
                 </ul>
               </div>
             </div>
-            <a class="title" href="#">Section 3</a>
+            <div class="section-title" href="#">Section 3</div>
           </div>
         </div>
         <div id="pg-content">
@@ -127,7 +127,7 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #42afb9;
 }
 
 /* RouterLink */
@@ -242,10 +242,20 @@ nav {
 }
 
 
-.title {
+.section-title {
+  cursor: pointer;
   display: flex; 
   min-width: 400px; 
   justify-content: center;
+  margin:15px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  font-family: "League Spartan", sans-serif;
+  color: #ffffff;
+  display: block;
+  margin-bottom: 20px;
+  transition: 0.3s;
 }
  
 #pg-content{
@@ -261,7 +271,7 @@ nav {
     font-size: 100% !important;
   }
 
-  .title {
+  .section-title {
     min-width: 300px;
   }
 }
@@ -274,7 +284,7 @@ nav {
     font-size: 100% !important;
   }
 
-  .title {
+  .section-title {
     min-width: 300px;
   }
 }
