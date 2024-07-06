@@ -9,7 +9,7 @@ cd dist
 git init
 git add -A
 git commit 
-git push -f git@github.com:Shade9378/CHEM120-E-Textbook.git main28796_Shade
+git push -f git@github.com:Shade9378/CHEM120-E-Textbook.git main:gh-pages
 :gh-pages
 
 cd -
