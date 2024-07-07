@@ -46,9 +46,9 @@
         <p class="title">
             Unit 1. Bonding, Introduction to Structural Representations
         </p>
-        <div id="slide" v-if="!gridEnabled" @touchstart="touchStartMethod" @mousedown="mouseDownMethod" @keyup.left="next()">
+        <div id="slide" v-if="!gridEnabled" @touchstart="touchStartMethod" @mousedown="mouseDownMethod">
             <div class="page" id="page1">
-                <p style="margin-top: 27px;" >
+                <p>
                     Throughout the semester, we will incorporate scientist spotlights highlighting scientists 
                     whose research is related to the topics we are studying and our course theme of neurotransmitters.
                 </p>
@@ -70,8 +70,8 @@
                 </p>
             </div>
             <div class="page" id="page2">
-                <div style="display: flex; flex-direction: column; min-height: 10vh;">
-                    <p>
+                <div class="podcast-container">
+                    <p class="podcast-text">
                         Deena did a podcast describing her motivation for her research:
                     </p>
                     <div class="podcast">
@@ -79,10 +79,10 @@
                         <iframe frameBorder="0" scrolling="no" src="https://playlist.megaphone.fm/?e=PPY5510118240"
                         width="60%" height=""></iframe>
                     </div>
-                    <p style="margin: 10px;">
+                    <p class="podcast-text">
                         When anxiety begins to overtake her, biology student Deena Walker begins to worry she'll end up just like her mentally ill sister.
                     </p>
-                    <p style="margin: 10px;">
+                    <p class="podcast-text">
                         Deena Walker is a postdoctoral fellow at Mt. Sinai School of Medicine where she studies the molecular mechanisms of addiction and depression. She recently moved to New York after finishing her PhD at The University of Texas at Austin in December 2012. When she's not in lab she enjoys practicing yoga and playing fetch with her dog in Central Park.
                     </p>
                 </div>
@@ -114,23 +114,17 @@
                 <P>Common elements in organic chemistry: C, H, O, N, F, Cl, Br, I</P>
             </div>
             <div class="page" id="page4">
-                <div style="display:flex; color: black; flex-direction: row; background: none; width: 100%;" @click="playVideo('overlay'); playVideo('media2')">
+                <div class="wrap-textbox" @click="playVideo('overlay'); playVideo('media2')">
                     <div class="elemtal-chart" style="cursor: pointer; display: flex; align-items: center; justify-items: center;">
                         <img src="@/assets/Unit1-PeriodicTable.webp" style="width:80%; margin: 20px;">
                     </div>
-                    <p style="margin: 12.5px; font-size: 120%; font-family:'League Spartan',sans-serif; text-align: justify; max-width: 50% !important; ">
+                    <p class="wrap-text">
                         These elements follow specific patterns when they make covalent bonds with each other.
                          For reasons we will understand more fully later, the elements we will be working with 
                         (except for H) want to have 8 valence electrons (electrons potentially able to make bonds). 
                         Hydrogen wants to have 2 valence electrons. 
                     </p>
                 </div>
-                <p style="float: right;">
-                    These elements follow specific patterns when they make covalent bonds with each other.
-                    For reasons we will understand more fully later, the elements we will be working with 
-                    (except for H) want to have 8 valence electrons (electrons potentially able to make bonds). 
-                    Hydrogen wants to have 2 valence electrons. 
-                </p>
                 <p>
                     The atoms start with a certain number of valence electrons. 
                     The periodic table tells us (the numbers at the top of the columns) how many electrons each atom starts with. 
@@ -149,7 +143,7 @@
                     Sometimes when people share they don't share equally. Maybe one is bigger than the other so they take more. This can make the relationship less stable. 
                     The same can be said for bonds. Some atoms attract the shared electrons more than others. Usually this makes for bonds that are more reactive.
                 </p>
-                <div style="width: 70%; height: 25vh; margin-left: auto; margin-right: auto; overflow: hidden;">
+                <div class="video" style="width: 70%; height: 25vh; margin-left: auto; margin-right: auto; overflow: hidden;">
                     <h6>Animation: Two people sharing soda?</h6>
                     <div class="hover-container">
                         <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png"  style="width: 40%; height: 19vh; cursor: pointer;" @click="playVideo('overlay'); playVideo('media1')" >
@@ -157,16 +151,16 @@
                 </div>
             </div>
             <div class="page" id="page6">
-                <p style="margin-bottom: 30px;">
+                <p>
                     We could take this analogy further. If the one of the people is much larger than the other they could take the drink entirely for themselves. 
                     This can actually make a strong bond too since the smaller person will be after the larger one to try to get some of the drink too. This is like an ionic bond.
                 </p>
-                <div style="display: flex; flex-direction: row; background:none;">
-                    <div style="display: flex; flex-direction: column; align-items: center; background-color: aliceblue; justify-content: space-around;">
+                <div class="wrap-textbox">
+                    <div style="display: flex; flex-direction: column; align-items: center; background-color: aliceblue; justify-content: space-around; width:50%">
                         <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png" style="width:50%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media3')">
                         <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png" style="width:50%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media4')">
                     </div>
-                    <p style="margin:0; color: black; font-size: 120%; font-family:'League Spartan',sans-serif; text-align: justify; max-width: 50% !important; ">
+                    <p class="wrap-text">
                         It is possible for two atoms to share more electrons with each other, always in pairs. 
                         We will see single bonds (1 electron shared from each atom), double bonds (2 electrons 
                         shared from each atom for 4 total), and triple bonds (3 electrons shared from each atom 
@@ -602,14 +596,18 @@ nav a.router-link-exact-active {
   display: none;
 }
 
-#slide > div > div {
-  padding:2%;
-  color: #FFFFFF;
-  background: #212121;
-  text-align: center;
-  border-radius: 20px;
-  display:block;
-  margin:0;
+.podcast-container,
+.video {
+    display: flex; 
+    flex-direction: column; 
+    min-height: 10vh;
+    padding:2%;
+    color: #FFFFFF;
+    background: #212121;
+    text-align: center;
+    border-radius: 20px;
+    display:block;
+    margin:0;
 }
 
 #slide > div > div > h6 {
@@ -618,7 +616,7 @@ nav a.router-link-exact-active {
     text-align: center;
 }
 
-#slide > div > div > p {
+.podcast-text {
     text-indent: 0%;
     margin: 10px;
     font-size: 100%;
@@ -653,11 +651,24 @@ nav a.router-link-exact-active {
   max-width:100%;
 }
 
-#slide > .page > p {
+#slide > .page > p,
+.wrap-text {
     margin: 12.5px;
     font-size: 120%;
     font-family:"League Spartan",sans-serif;
     text-align: justify;
+}
+
+.wrap-text {
+    color: black;
+    max-width: 50%
+}
+.wrap-textbox {
+    display:flex; 
+    flex-direction: row !important; 
+    background: none !important; 
+    width: 100%;
+    margin: 0;
 }
 
 .wrap-up-head {
@@ -672,7 +683,7 @@ nav a.router-link-exact-active {
 
 .excercise {
     margin:30px 4%; 
-    min-width: 90%; 
+    width: 90%; 
     cursor: pointer;
 }
 
