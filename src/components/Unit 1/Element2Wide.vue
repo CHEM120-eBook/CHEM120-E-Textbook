@@ -24,25 +24,25 @@
                     selects the thumbnail picture.
                 -->
             </div>
-            <video id="media1" class="media" width="80%" controls>
+            <video id="media1" class="media" controls>
                 <source src="@/assets/Unit1-twoPeopleSharingSoda.mp4" type="video/mp4" showControl>
             </video>
 
-            <img id="media2" class="media" width="80%" src="@/assets/Unit1-PeriodicTable.webp"> 
+            <img id="media2" class="media" src="@/assets/Unit1-PeriodicTable.webp"> 
 
-            <img id="media3" class="media" width="40%" src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png">
+            <img id="media3" class="media" style="width: 40%;" src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png">
 
-            <img id="media4" class="media" width="40%" src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png">
+            <img id="media4" class="media" style="width: 40%;" src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png">
 
-            <img id="media5" class="media" width="80%" src="@/assets/Unit1-BondSymbolTable.webp">
+            <img id="media5" class="media" src="@/assets/Unit1-BondSymbolTable.webp">
 
-            <img id="media6" class="media" width="80%" src="@/assets/Unit1LewisDot (1).webp">
+            <img id="media6" class="media" src="@/assets/Unit1LewisDot (1).webp">
 
-            <img id="media7" class="media" width="80%" src="@/assets/Unit1NumberOfBonds.webp">
+            <img id="media7" class="media" src="@/assets/Unit1NumberOfBonds.webp">
 
-            <img id="media8" class="media" width="80%" src="@/assets/Unit1LewisToCondensed.webp">
+            <img id="media8" class="media" src="@/assets/Unit1LewisToCondensed.webp">
 
-            <img id="media9" class="media" width="80%" src="@/assets/Unit1CondensedToLewis.webp">
+            <img id="media9" class="media"  src="@/assets/Unit1CondensedToLewis.webp">
 
             <p class="title">
                 Unit 1. Bonding, Introduction to Structural Representations
@@ -78,7 +78,7 @@
                         <div class="podcast">
                             <img src="@/assets/Unit1-DeenaWalker.jpg">
                             <iframe frameBorder="0" scrolling="no" src="https://playlist.megaphone.fm/?e=PPY5510118240"
-                            style="max-width: 60% !important;"></iframe>
+                           width="60%"></iframe>
                         </div>
                         <p class="podcast-text">
                             When anxiety begins to overtake her, biology student Deena Walker begins to worry she'll end up just like her mentally ill sister.
@@ -116,8 +116,8 @@
                 </div>
                 <div class="page" id="page4">
                     <div class="wrap-textbox" @click="playVideo('overlay'); playVideo('media2')">
-                        <div class="elemtal-chart" style="cursor: pointer; display: flex; align-items: center; justify-items: center;">
-                            <img src="@/assets/Unit1-PeriodicTable.webp" style="width:80%; margin: 20px;">
+                        <div class="periodic-table-container">
+                            <img class="periodic-table" src="@/assets/Unit1-PeriodicTable.webp" >
                         </div>
                         <p class="wrap-text">
                             These elements follow specific patterns when they make covalent bonds with each other.
@@ -144,10 +144,10 @@
                         Sometimes when people share they don't share equally. Maybe one is bigger than the other so they take more. This can make the relationship less stable. 
                         The same can be said for bonds. Some atoms attract the shared electrons more than others. Usually this makes for bonds that are more reactive.
                     </p>
-                    <div class="video" style="width: 70%; height: 25vh; margin-left: auto; margin-right: auto; overflow: hidden;">
-                        <h6>Animation: Two people sharing soda?</h6>
+                    <div class="video">
+                        <h6 class="vid-title">Animation: Two people sharing soda?</h6>
                         <div class="hover-container">
-                            <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png"  style="width: 40%; height: 19vh; cursor: pointer;" @click="playVideo('overlay'); playVideo('media1')" >
+                            <img class="thumbnail" src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png" @click="playVideo('overlay'); playVideo('media1')" >
                         </div>
                     </div>
                 </div>
@@ -157,9 +157,9 @@
                         This can actually make a strong bond too since the smaller person will be after the larger one to try to get some of the drink too. This is like an ionic bond.
                     </p>
                     <div class="wrap-textbox">
-                        <div style="display: flex; flex-direction: column; align-items: center; background-color: aliceblue; justify-content: space-around; width:50%">
-                            <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png" style="width:50%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media3')">
-                            <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png" style="width:50%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media4')">
+                        <div class="wrap-img-container">
+                            <img class="wrap-img" src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png" @click="playVideo('overlay'); playVideo('media3')">
+                            <img class="wrap-img" src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png" @click="playVideo('overlay'); playVideo('media4')">
                         </div>
                         <p class="wrap-text">
                             It is possible for two atoms to share more electrons with each other, always in pairs. 
@@ -172,9 +172,7 @@
                     </div>
                 </div>
                 <div class="page" id="page7">
-                    <p style="text-indent: 0%;">
-                    </p>
-                    <img src="@/assets/Unit1-BondSymbolTable.webp" style="margin:30px 25%; width: 50%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media5')">
+                    <img class="bond-table" src="@/assets/Unit1-BondSymbolTable.webp" @click="playVideo('overlay'); playVideo('media5')">
                     <p>
                         Lewis dot symbols are written by writing the symbol (letter) for each atom then surrounding 
                         it with dots to represent electrons. Imagine the symbol is inside a square. We write up to 
@@ -262,3 +260,94 @@
 
 <script unit1 src='@/components/common.js'></script>
 <style scoped src="@/components/style.css"></style>
+<style scoped>
+.periodic-table-container {
+    cursor: pointer; 
+    display: flex; align-items: center; 
+    justify-items: center;
+}
+.periodic-table {
+    width:80%; 
+    margin: 20px;
+}
+
+.podcast-text {
+  text-indent: 0%;
+  margin: 10px;
+  font-size: 100%;
+  font-family: "League Spartan",sans-serif;
+  text-align: justify;
+}
+
+.podcast-container {
+  display: flex; 
+  overflow: hidden;
+  flex-direction: column; 
+  min-height: 10vh;
+  padding:2%;
+  color: #FFFFFF;
+  background: #212121;
+  text-align: center;
+  border-radius: 20px;
+  display:block;
+  margin:0;
+}
+
+.wrap-img-container {
+    display: flex; 
+    flex-direction: column !important; 
+    align-items: center;
+    justify-content: space-around; 
+    width:50%;
+}
+
+.wrap-img {
+    width:50%; 
+    cursor: pointer;
+}
+
+.bond-table {
+    margin:30px 25%; 
+    width: 50%; 
+    cursor: pointer;
+}
+
+.excercise {
+  margin:30px 4%; 
+  width: 90%; 
+  cursor: pointer;
+}
+
+.ex-answer {
+  margin: 0% 4% !important;
+  width:95% !important;
+  height:7% !important;
+}
+
+.wrap-text {
+  color: black;
+  max-width: 50%;
+  margin: 12.5px;
+  font-size: 120%;
+  font-family:"League Spartan",sans-serif;
+  text-align: justify;
+}
+
+.wrap-textbox {
+  display:flex; 
+  flex-direction: row !important; 
+  background: none !important; 
+  width: 100%;
+  margin: 0;
+}
+
+.wrap-up-head {
+  font-style: italic; 
+  margin-bottom: 0% !important;
+}
+
+.wrap-up-content {
+  margin-top: 0% !important;
+}
+
+</style>

@@ -60,6 +60,7 @@ display:none;
 }
 
 .media {
+  width: 80%;
   position: absolute;
   left: 0;
   right: 0;
@@ -141,50 +142,44 @@ margin:0;
 overflow-y: scroll !important; 
 -ms-overflow-style: none;  
 scrollbar-width: none;  
+
 }
 #slide > div::-webkit-scrollbar {
 display: none;
 }
 
-.podcast-container,
 .video {
   display: flex; 
   overflow: hidden;
   flex-direction: column; 
-  min-height: 10vh;
+  height: 29vh;
+  width: 70%;
   padding:2%;
   color: #FFFFFF;
   background: #212121;
   text-align: center;
   border-radius: 20px;
-  display:block;
-  margin:0;
+  margin-left: auto; 
+  margin-right: auto;
+  overflow: hidden
 }
 
-#slide > div > div > h6 {
-  margin: 0;
+.vid-title {
+  margin-bottom: 3vh !important;
   font-size: 16px;
   text-align: center;
 }
 
-.podcast-text {
-  text-indent: 0%;
-  margin: 10px;
-  font-size: 100%;
-  font-family: "League Spartan",sans-serif;
-  text-align: justify;
+.thumbnail {
+  width: 40%; 
+  height: 19vh; 
+  cursor: pointer;
 }
 
 #slide > div > textarea{
   margin: 0 4% 4% 4%;
   width:95%;
   height:10%;
-}
-
-.ex-answer {
-  margin: 0% 4% !important;
-  width:95% !important;
-  height:7% !important;
 }
 
 .progress-container {
@@ -202,72 +197,51 @@ min-width:0%;
 max-width:100%;
 }
 
-#slide > .page > p,
-.wrap-text {
+#slide > .page > p {
   margin: 12.5px;
   font-size: 120%;
   font-family:"League Spartan",sans-serif;
   text-align: justify;
 }
 
-.wrap-text {
-  color: black;
-  max-width: 50%
-}
-.wrap-textbox {
-  display:flex; 
-  flex-direction: row !important; 
-  background: none !important; 
-  width: 100%;
-  margin: 0;
-}
-
-.wrap-up-head {
-  font-style: italic; 
-  margin-bottom: 0% !important;
-}
-
-.wrap-up-content {
-  margin-top: 0% !important;
-
-}
-
-.excercise {
-  margin:30px 4%; 
-  width: 90%; 
-  cursor: pointer;
-}
 
 /*** Media Quiries for Width ***/
 @media (max-width: 600px) or (orientation:portrait) {
-  .background {
-    height: 100vh;
+    .background {
+      height: 100vh;
+    }
+    #slide > div { 
+        min-width: 100%;
+    }
+    .title {
+      margin: 5%;
+        font-size: 5vw;
+    }
+    .container {
+        min-width: 85.3vw;
+    }
+    .control {
+        font-size: 70px;
+    }
+    .nav-buttons {
+        width: 100px;
   }
+  @media screen and (min-height: 900px) {
+    #slide > .page > p {
+        font-size: 160%;
+    }
+    .wrap-text {
+      font-size: 160% !important;
+    }
+    #slide > div > div > p {
+        font-size: 120%;
 
-  #slide > div { 
-      min-width: 100%;
-  }
-  .title {
-    margin: 5%;
-      font-size: 5vw;
-  }
-  .container {
-      min-width: 85.3vw;
-  }
-  .control {
-      font-size: 70px;
-  }
-  .nav-buttons {
-      width: 100px;
+    }
   }
 }
-@media screen and (min-height: 900px) {
-  #slide > .page > p {
-      font-size: 180%;
-  }
-  #slide > div > div > p {
-      font-size: 150%;
-
+@media (max-width: 600px) and (orientation:portrait) {
+  .thumbnail {
+    width: 70%;
   }
 }
 
@@ -277,7 +251,9 @@ max-width:100%;
   }
   #slide > div > div > p {
       font-size: 180%;
-
+  }
+  .wrap-text {
+    font-size: 210%;
   }
 }
 
