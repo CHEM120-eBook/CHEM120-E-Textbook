@@ -3,7 +3,6 @@
     <nav>
       <div style="display: flex; flex-direction: row;">
         <div id="mySidemenu" class="sidemenu">
-          <a href="javascript:void(0)" class="close" @click="closeSM">&times;</a>
           <div class="sm-wrapper">
             <div class="dropdown">
               <div class="section-title" @click="openSubMenu('dropdown-content1')">Section 1</div>
@@ -34,11 +33,12 @@
             </div>
             <div class="section-title" href="#">Section 3</div>
           </div>
+          <a href="javascript:void(0)" class="close" @click="closeSM">&times;</a>
         </div>
         <div id="pg-content">
           <div class="open" @click="openSM">&#9776;</div>
         </div>
-        <h3><router-link to="/" style="text-decoration: none; font-family: 'League Spartan', sans-serif;">Organic Chemistry E-Text</router-link></h3>
+        <router-link class="web-title" to="/" style="text-decoration: none; font-family: 'League Spartan', sans-serif;">Organic Chemistry E-Text</router-link>
       </div>
       <a href="https://www.depauw.edu/academics/chemistry-and-biochemistry/" target="_blank" style="width: 10%; margin-right: 2vw;">
         <img src="./assets/depauw-logo.png" style="width: 100%; cursor: pointer;" >
@@ -66,8 +66,8 @@ export default{
         this.closeSM();
       }
       else {
-        if (window.screen.width <= 1032) {
-          if (window.screen.width <= 600) {
+        if (window.innerWidth <= 1020) {
+          if (window.innerWidth <= 600) {
             document.getElementById("mySidemenu").style.width ="350px";
           }
           else {
@@ -101,7 +101,24 @@ export default{
         el.style.display = "block";
       }
     },
-  },
+
+    mouseDownMethod (touchEvent) {
+      const posXStart = touchEvent.clientX;
+      addEventListener('mouseup', (touchEvent) => this.mouseUpMethod(touchEvent, posXStart), {once: true});
+    },
+
+    mouseUpMethod (touchEvent, posXStart) {
+      const cellText = document.getSelection();
+      const posXEnd = touchEvent.clientX;
+      if (cellText.type != 'Range') {
+        if (posXStart < posXEnd) {
+          this.previous(); // swipe right
+        } else if (posXStart > posXEnd) {
+          this.next(); // swipe left
+        }
+      }
+    },
+  }
 }
 </script>
 
@@ -141,10 +158,11 @@ nav a.router-link-exact-active {
   display:none;
 }
 
-h3 {
+.web-title {
+  min-width: fit-content !important;
   display: flex;
   align-items: center;
-  margin: 3vw;
+  margin-left: 3%;
   font-size: 200% !important;
 }
 
@@ -259,25 +277,33 @@ nav {
 }
  
 #pg-content{
+  display: flex;
+  align-items: center;
   transition: margin-left 0.5s;
   padding: 5px;
 }
 
-@media screen and (max-width: 600px) {
-  h3 {
+@media screen and (max-width: 600px), 
+(orientation: portrait) {
+  .web-title {
     font-size: 150% !important;
   }
   .open {
     font-size: 100% !important;
   }
-
   .section-title {
     min-width: 300px;
+  }
+  .web-title {
+    min-height: 200% !important;
+  }
+  nav {
+    height: 59px !important;
   }
 }
 
 @media screen and (max-width: 365px) {
-  h3 {
+  .web-title {
     font-size: 130% !important;
   }
   .open {
@@ -290,7 +316,7 @@ nav {
 }
 
 @media screen and (min-width: 2300px) {
-  h3 {
+  .web-title {
     font-size: 300% !important;
   }
 }

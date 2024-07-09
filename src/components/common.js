@@ -150,18 +150,12 @@ export default {
         },
  
         touchStartMethod (touchEvent) {
-            if (touchEvent.changedTouches.length !== 1) { // Only care if one finger is used
-                return;
-            }
             const posXStart = touchEvent.changedTouches[0].clientX;
             const posYStart = touchEvent.changedTouches[0].clientY;
             addEventListener('touchend', (touchEvent) => this.touchEndMethod(touchEvent, posXStart, posYStart), {once: true});
         },
 
         touchEndMethod (touchEvent, posXStart, posYStart) {
-            if (touchEvent.changedTouches.length !== 1) { // Only care if one finger is used
-                return;
-            }
             const posXEnd = touchEvent.changedTouches[0].clientX;
             const posYEnd = touchEvent.changedTouches[0].clientY;
             if (Math.abs(posYEnd - posYStart) <= 100) {
@@ -174,11 +168,17 @@ export default {
         },
 
         mouseDownMethod (touchEvent) {
+            if (touchEvent.changedTouches.length !== 1) { // Only care if one finger is used
+                return;
+            }
             const posXStart = touchEvent.clientX;
             addEventListener('mouseup', (touchEvent) => this.mouseUpMethod(touchEvent, posXStart), {once: true});
         },
 
         mouseUpMethod (touchEvent, posXStart) {
+            if (touchEvent.changedTouches.length !== 1) { // Only care if one finger is used
+                return;
+            }
             const cellText = document.getSelection();
             const posXEnd = touchEvent.clientX;
             if (cellText.type != 'Range') {

@@ -206,7 +206,8 @@ max-width:100%;
 
 
 /*** Media Quiries for Width ***/
-@media (max-width: 600px) or (orientation:portrait) {
+@media (max-width: 600px),
+(orientation:portrait) {
     .background {
       height: 100vh;
     }
@@ -215,7 +216,7 @@ max-width:100%;
     }
     .title {
       margin: 5%;
-        font-size: 5vw;
+      font-size: 5vw;
     }
     .container {
         min-width: 85.3vw;
@@ -226,19 +227,36 @@ max-width:100%;
     .nav-buttons {
         width: 100px;
   }
-  @media screen and (min-height: 900px) {
-    #slide > .page > p {
-        font-size: 160%;
-    }
-    .wrap-text {
-      font-size: 160% !important;
-    }
-    #slide > div > div > p {
-        font-size: 120%;
-
-    }
+}
+@media screen and (max-height: 500px) {
+  #slide > .page > p,
+  .wrap-text {
+    font-size: 70% !important;
+  }
+  #slide {
+    overflow-y: scroll;
+  }
+  .background{
+    height: 100vh;
+  }
+  .title {
+    font-size: 129%;
+  }
+  .podcast-text {
+    font-size: 70% !important;
   }
 }
+
+@media screen and (min-height: 900px) {
+  #slide > .page > p,
+  .wrap-text {
+      font-size: 160% !important;
+  }
+  #slide > div > div > p {
+      font-size: 120%;
+  }
+}
+
 @media (max-width: 600px) and (orientation:portrait) {
   .thumbnail {
     width: 70%;

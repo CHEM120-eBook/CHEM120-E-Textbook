@@ -260,6 +260,7 @@
 
 <script unit1 src='@/components/common.js'></script>
 <style scoped src="@/components/style.css"></style>
+
 <style scoped>
 .periodic-table-container {
     cursor: pointer; 
