@@ -1,11 +1,18 @@
 
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
-
 /*
 	Solid State by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+
+.body {
+    background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url('../../assets/cat.jpg');
+    background-size: auto, cover;
+		background-attachment: fixed,fixed;
+		background-position: center, start;
+}
+
 footer,section { 
 	display: block;}
 
