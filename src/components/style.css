@@ -29,7 +29,7 @@ max-width: 100%;
 }
 
 header{
-background-color: rgb(255, 255, 130);
+background-color: rgb(204,204,0);
 }
 
 nav {
@@ -98,7 +98,7 @@ display:none;
   align-items: center;
   justify-self: center;
   height: 70px;
-  color: yellow ;
+  color: rgb(255, 255, 130) ;
   border: none;
   font-size: 90px;
 }

@@ -1,13 +1,5 @@
 <template>
     <div class="background">
-        <!--
-            This "Element2Wide.vue" component shows up when the screen is wider than a certain number.
-            (See "ScrollView.vue")
-        -->
-        <!--
-            Code reference: Adeoye's blog article "How to build a Vuejs image slider"
-            https://medium.com/@davidola360/how-to-create-a-vuejs-image-slider-60b4be844081
-        -->
         <div class="container" id="container" @keyup="created">
             <div class="nav-buttons">
                 <button @click="previous" class="control">
@@ -85,7 +77,7 @@
                     </p>
                 </div>
                 <div class="page" id="page" @click="PlsAcceptMe">
-                    <div style="background-color: yellow; margin-bottom: 30px;">
+                    <div style="background-color: rgb(255, 255, 130); margin-bottom: 30px;">
                         <div style="color: black;">Isomer Game </div> 
                         <button style="border-radius: 30%; border: none;" @click="playVideo('media2')">Play</button>
                     </div>

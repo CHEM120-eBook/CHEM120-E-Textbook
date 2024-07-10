@@ -38,7 +38,7 @@
         <div id="pg-content">
           <div class="open" @click="openSM">&#9776;</div>
         </div>
-        <router-link class="web-title" to="/" style="text-decoration: none; font-family: 'League Spartan', sans-serif;">Organic Chemistry E-Text</router-link>
+        <router-link class="web-title" to="/" style="text-decoration: none; font-family: 'League Spartan', sans-serif;">ORGANIC CHEMISTRY E-TEXT</router-link>
       </div>
       <a href="https://www.depauw.edu/academics/chemistry-and-biochemistry/" target="_blank" style="width: 10%; margin-right: 2vw;">
         <img src="./assets/depauw-logo.png" style="width: 100%; cursor: pointer;" >
