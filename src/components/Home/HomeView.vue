@@ -6,7 +6,6 @@
     <!-- Banner -->
       <section id="banner">
         <div class="inner">
-          <div class="logo"><span class="icon fa-gem"></span></div>
           <h2>Organic Chemistry E-Text</h2>
           <p>adfsafsadfsafdsaffdadfa</p>
         </div>
@@ -17,10 +16,10 @@
         <!-- One -->
           <section id="one" class="wrapper spotlight style1">
             <div class="inner">
-              <a href="#" class="image"><img src="@/assets/cat3.jpg" alt="" /></a>
+              <a href="#" class="image"><img src="@/assets/cat2.jpg" alt="" /></a>
               <div class="content">
-                <h2 class="major" style="color: rgb(96, 96, 96) !important;">Magna arcu feugiat</h2>
-                <p style="color: rgb(96, 96, 96);">Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
+                <h2 class="major main-content" id="main-content1">Magna arcu feugiat</h2>
+                <p class="main-content">Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
               </div>
             </div>
           </section>
@@ -29,9 +28,9 @@
           <section id="two" class="wrapper alt spotlight style2">
             <div class="inner">
               <a href="#" class="image"><img src="@/assets/cat2.jpg" alt="" /></a>
-              <div class="content">
-                <h2 class="major">Tempus adipiscing</h2>
-                <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
+              <div class="content" id="content2">
+                <h2 class="major main-content" id="main-content2">Tempus adipiscing</h2>
+                <p class="main-content" id="main-content3">Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
               </div>
             </div>
           </section>

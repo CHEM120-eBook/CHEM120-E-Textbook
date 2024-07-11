@@ -168,17 +168,17 @@ export default {
         },
 
         mouseDownMethod (touchEvent) {
-            if (touchEvent.changedTouches.length !== 1) { // Only care if one finger is used
+            /***if (touchEvent.changedTouches.length !== 1) { // Only care if one finger is used
                 return;
-            }
+            } ***/
             const posXStart = touchEvent.clientX;
             addEventListener('mouseup', (touchEvent) => this.mouseUpMethod(touchEvent, posXStart), {once: true});
         },
 
         mouseUpMethod (touchEvent, posXStart) {
-            if (touchEvent.changedTouches.length !== 1) { // Only care if one finger is used
+            /***if (touchEvent.changedTouches.length !== 1) { // Only care if one finger is used
                 return;
-            }
+            }***/
             const cellText = document.getSelection();
             const posXEnd = touchEvent.clientX;
             if (cellText.type != 'Range') {

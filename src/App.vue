@@ -102,7 +102,7 @@ export default{
       }
     },
 
-    mouseDownMethod (touchEvent) {
+    /***mouseDownMethod (touchEvent) {
       const posXStart = touchEvent.clientX;
       addEventListener('mouseup', (touchEvent) => this.mouseUpMethod(touchEvent, posXStart), {once: true});
     },
@@ -117,7 +117,7 @@ export default{
           this.next(); // swipe left
         }
       }
-    },
+    },***/
   }
 }
 </script>
