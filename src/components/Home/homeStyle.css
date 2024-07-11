@@ -167,6 +167,22 @@ h6 {
     font-size: 0.7em;
 }
 
+@media screen and (max-width: 600px) {
+    #inner2 {
+        display: flex !important; 
+        flex-direction: column !important; 
+        align-items: center !important;
+    }
+    
+    #main-content1 {
+        text-align: center !important;
+    }
+
+    .intro, .main-content {
+        text-align-last: center !important;
+    }
+}
+
 @media screen and (max-width: 736px) {
 
     h2 {
@@ -553,6 +569,7 @@ li.icon.solid.fa-home {
     text-align: start;
     margin: 0%;
 }
+
 
 @media screen and (max-width: 736px) {
 

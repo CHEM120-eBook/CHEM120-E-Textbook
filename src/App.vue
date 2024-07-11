@@ -1,5 +1,5 @@
 <template>
-  <header>
+ <header>
     <nav>
       <div style="display: flex; flex-direction: row;">
         <div id="mySidemenu" class="sidemenu">

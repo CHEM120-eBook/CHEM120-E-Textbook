@@ -1,5 +1,6 @@
 <style scoped src="@/components/Home/homeStyle.css"></style>
 <template>
+  <div class="nav-space"></div>
   <div class="body">
     <!-- Page Wrapper -->
     <div id="page-wrapper">
@@ -7,7 +8,7 @@
       <section id="banner">
         <div class="inner">
           <h2>Organic Chemistry E-Text</h2>
-          <p style="text-align: justify; display: flex; align-self: center; text-align-last: center;">
+          <p style="text-align: justify; text-align-last: center;">
             Welcome to the Chem 120 Organic Chemistry Electronic Textbook. 
             You may have encountered electronic textbooks before. 
             In most cases you probably found that they were basically 
@@ -23,7 +24,7 @@
       <section id="wrapper">
         <!-- One -->
           <section id="one" class="wrapper spotlight style1">
-            <div class="inner">
+            <div class="inner" id="inner2">
               <a href="#" class="image"><img src="@/assets/cat2.jpg" alt="" /></a>
               <div class="content">
                 <h2 class="major main-content" id="main-content1">Purpose of the project</h2>
@@ -44,7 +45,7 @@
               <a href="#" class="image"><img src="@/assets/cat2.jpg" alt="" /></a>
               <div class="content" id="content2">
                 <!--<h2 class="major main-content" id="main-content2">The importance of 2D model</h2>--->
-                <p class="main-content" id="main-content3">
+                <p class="main-content" id="main-content3"  style="text-align: justify;">
                   However, we often need to represent organic 
                   compounds on 2D surfaces - a piece of paper, a computer screen, or a whiteboard. 
                   One of our challenges will be to learn how to represent these molecules in 2D while having a 

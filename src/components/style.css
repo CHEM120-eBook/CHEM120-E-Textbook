@@ -204,30 +204,30 @@ max-width:100%;
   text-align: justify;
 }
 
-
 /*** Media Quiries for Width ***/
 @media (max-width: 600px),
 (orientation:portrait) {
-    .background {
-      height: 100vh;
-    }
-    #slide > div { 
-        min-width: 100%;
-    }
-    .title {
-      margin: 5%;
-      font-size: 5vw;
-    }
-    .container {
-        min-width: 85.3vw;
-    }
-    .control {
-        font-size: 70px;
-    }
-    .nav-buttons {
-        width: 100px;
+  .background {
+    height: 100vh;
+  }
+  #slide > div { 
+      min-width: 100%;
+  }
+  .title {
+    margin: 5%;
+    font-size: 5vw;
+  }
+  .container {
+      min-width: 85.3vw;
+  }
+  .control {
+      font-size: 70px;
+  }
+  .nav-buttons {
+      width: 100px;
   }
 }
+
 @media screen and (max-height: 500px) {
   #slide > .page > p,
   .wrap-text {
