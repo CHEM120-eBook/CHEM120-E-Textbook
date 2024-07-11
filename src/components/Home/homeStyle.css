@@ -419,6 +419,7 @@ input[type="radio"] + label:before {
 }
 
 .icon:before {
+    margin-right: 30px;
     line-height: inherit;
 }
 
@@ -570,6 +571,9 @@ li.icon.solid.fa-home {
     margin: 0%;
 }
 
+li.icon.solid {
+    padding: 0%;
+}
 
 @media screen and (max-width: 736px) {
 

@@ -8,7 +8,7 @@
       <section id="banner">
         <div class="inner">
           <h2>Organic Chemistry E-Text</h2>
-          <p style="text-align: justify; text-align-last: center;">
+          <p class="intro" id="text1" style="text-align: justify; text-align-last: center;">
             Welcome to the Chem 120 Organic Chemistry Electronic Textbook. 
             You may have encountered electronic textbooks before. 
             In most cases you probably found that they were basically 
@@ -27,7 +27,7 @@
             <div class="inner" id="inner2">
               <a href="#" class="image"><img src="@/assets/cat2.jpg" alt="" /></a>
               <div class="content">
-                <h2 class="major main-content" id="main-content1">Purpose of the project</h2>
+                <h2 class="major main-content" id="main-content1">Goal for the course</h2>
                 <p class="main-content" style="text-align: justify; text-align-last: end;">
                   Why do this? Well, you will see as we progress through the semester that organic
                   chemistry is a very visual subject. After all, organic compounds, which are the focus of 
@@ -87,8 +87,7 @@
               Julian Science and Math Center, Room 360, <br>
               Greencastle, IN 46135  
             </li>
-            <li class="icon brands fa-twitter">Office Hours: </li>
-            <li class="icon solid fa-phone">(765) 658-4613</li>
+            <li class="icon solid fa-phone">(765)-719-2376</li>
             <li class="icon solid fa-envelope"><a href="#">jhansen@depauw.edu</a></li>
           </ul>
           <ul class="copyright">
