@@ -20,8 +20,8 @@
                 <source src="" type="video/mp4" showControl>
             </video>
             <div id="media2" class="media">
-                <div style="position:absolute; top: -70px; width: 100%; height: 120%; background-color: grey;"></div>
-                <iframe style="position: absolute; height: 120%; top: -70px;" frameBorder="0" scrolling="no" src="https://jefhans4.github.io/IsomerGame/"
+                <div style="position:absolute; right: 0%; top: -70px; width: 100%; height: 120%; background-color: grey;"></div>
+                <iframe style="position: absolute; height: 120%; width: 100vw; top: -70px;" frameBorder="0" scrolling="no" src="http://localhost:5500/"
                 width="100%" height="100%"></iframe>
                 <button style="position: absolute; right: 10%; top: -70px" @click="closeVideo('media2')">X</button>
             </div>
@@ -31,7 +31,7 @@
                 Unit 2. More Structural Representations and Isomers
             </p>
             <div id="slide" v-if="!gridEnabled" @touchstart="touchStartMethod" @mousedown="mouseDownMethod" @keyup.left="next()">
-                <div class="page" id="page">
+                <div class="page" id="page1">
                     <p style="margin-top: 27px;" >
                         As with Lewis structures, in line structures we represent bonds with lines. However, in line
                         structures we don’t show all of the bonds. We leave out bonds to hydrogen atoms. Also, we don’t
@@ -50,7 +50,7 @@
                         usually write hydrogens bonded to other atoms.
                     </p>
                 </div>
-                <div class="page" id="page">
+                <div class="page" id="page2">
                     <p>
                         <strong>What we will learn in this unit:</strong>
                         <ul list-style: disc outside none>
@@ -63,7 +63,7 @@
                         Let’s see some examples.
                     </p>
                 </div>
-                <div class="page" id="page">
+                <div class="page" id="page3">
                     <p><strong>Isomers</strong></p>
                     <p>
                         
@@ -76,7 +76,7 @@
                         there may be many ways to draw the same structure. 
                     </p>
                 </div>
-                <div class="page" id="page" @click="PlsAcceptMe">
+                <div class="page" id="page4" @click="PlsAcceptMe">
                     <div style="background-color: rgb(255, 255, 130); margin-bottom: 30px;">
                         <div style="color: black;">Isomer Game </div> 
                         <button style="border-radius: 30%; border: none;" @click="playVideo('media2')">Play</button>

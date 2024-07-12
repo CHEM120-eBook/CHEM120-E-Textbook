@@ -1,6 +1,8 @@
 <style scoped src="@/components/Home/homeStyle.css"></style>
+<script src='@/components/Home/main.js'></script>
 <template>
-  <div class="nav-space"></div>
+  <div id="overlay" class="overlay" @click="clickOut('overlay'); clickOut('media')"></div>
+  <img id="media" class="media" src="@/assets/homemodel.jpg"> 
   <div class="body">
     <!-- Page Wrapper -->
     <div id="page-wrapper">
@@ -25,7 +27,9 @@
         <!-- One -->
           <section id="one" class="wrapper spotlight style1">
             <div class="inner" id="inner2">
-              <a href="#" class="image"><img src="@/assets/cat2.jpg" alt="" /></a>
+              <div class="image" id="image1">
+                <iframe scrolling="no" src="https://pubchem.ncbi.nlm.nih.gov/compound/epinephrine#section=3D-Conformer&fullscreen=true" alt="3D Model of Epinephrine"/>
+              </div>
               <div class="content">
                 <h2 class="major main-content" id="main-content1">Goal for the course</h2>
                 <p class="main-content" style="text-align: justify; text-align-last: end;">
@@ -35,6 +39,9 @@
                   Understanding their composition, their properties, and their chemistry will 
                   require us to understand their 3D shapes. 
                 </p>
+                <p class="main-content" style=" text-align-last: end;">
+                This is a 3D representation of the molecule epinephrine, also known as adrenaline.
+                </p>
               </div>
             </div>
           </section>
@@ -42,7 +49,7 @@
         <!-- Two -->
           <section id="two" class="wrapper alt spotlight style2">
             <div class="inner">
-              <a href="#" class="image"><img src="@/assets/cat2.jpg" alt="" /></a>
+              <a class="image" id="image2" style="cursor: pointer;" @click="playVideo('overlay'); playVideo('media')"><img src="@/assets/homemodel.jpg" alt="" /></a>
               <div class="content" id="content2">
                 <!--<h2 class="major main-content" id="main-content2">The importance of 2D model</h2>--->
                 <p class="main-content" id="main-content3"  style="text-align: justify;">
@@ -51,6 +58,9 @@
                   One of our challenges will be to learn how to represent these molecules in 2D while having a 
                   3D understanding of them. This e-textbook attempts to bridge the gap between 2D pictures and 
                   3D understanding.
+                </p>
+                <p class="main-content" style=" text-align: start;">
+                  These are a variety of 2D representations of the molecule epinephrine, also known as adrenaline.
                 </p>
               </div>
             </div>

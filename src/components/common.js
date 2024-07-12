@@ -31,7 +31,7 @@ export default {
     methods:{
         resizeAdjust() {
             let pageArr = document.getElementsByClassName("page");
-            if (window.screen.width >= window.screen.height && window.innerWidth > 800)  {
+            if (window.innerWidth >= window.innerHeight && window.innerWidth > 800)  {
                 pageArr[this.count * 2].scrollIntoView({ 
                     behavior: "instant", 
                     block: "start", 
@@ -79,7 +79,7 @@ export default {
             //var scrolled = (winScroll / height) * 100;
             //var totalWidth = screen.availWidth;
             var totalWidth = document.getElementById("slide").offsetWidth;
-            var scrolled = (window.screen.width <= window.screen.height) ? totalWidth / (pageArr.length - 1) : totalWidth / (pageArr.length/2 - 1); 
+            var scrolled = (window.innerWidth <= window.innerHeight) ? totalWidth / (pageArr.length - 1) : totalWidth / (pageArr.length/2 - 1); 
             document.getElementById("myBar").style.width = scrolled*this.count + "px";
             console.log(this.count)
         },
@@ -94,7 +94,7 @@ export default {
 
         next() {
             let pageArr = document.getElementsByClassName("page");
-            let limit = window.screen.width >= window.screen.height && window.innerWidth > 600 ? pageArr.length / 2 - 1 : pageArr.length - 1;
+            let limit = window.innerWidth >= window.innerHeight && window.innerWidth > 600 ? pageArr.length / 2 - 1 : pageArr.length - 1;
             if(this.count < limit){
                 this.count++
                 this.scroll("next")
@@ -105,7 +105,7 @@ export default {
 
         scroll(position) {
             let el = document.getElementById("slide");
-            if ((window.screen.width >= window.screen.height) 
+            if ((window.innerWidth >= window.innerHeight) 
             && (window.innerWidth > 1300)) {
                 let width = document.getElementById("container").offsetWidth/2;
                 let pos = 0;
@@ -131,8 +131,8 @@ export default {
                 console.log(window.innerWidth);
             }
             else {
-                let page = document.getElementById("page1").offsetWidth;
-                let width = (window.innerWidth > 600) && (window.screen.width > window.screen.height) ? page * 2 : page;
+                let page = document.getElementsByClassName("page")[0].offsetWidth;
+                let width = (window.innerWidth > 600) && (window.innerWidth > window.innerWidth) ? page * 2 : page;
                 if(position == 'next'){  
                     el.scrollLeft += width;
                 }

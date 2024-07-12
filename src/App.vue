@@ -135,6 +135,7 @@ export default{
 }
 
 header{
+  position: absolute;
   background-color: rgb(255, 255, 130);
 }
 

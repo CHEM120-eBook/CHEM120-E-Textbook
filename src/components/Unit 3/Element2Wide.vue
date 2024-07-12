@@ -62,7 +62,7 @@
                         refined into gasoline, diesel fuel,
                     </p>
                 </div>
-                <div class="page" id="page">
+                <div class="page" id="page2">
                     <p style="text-indent: 0%;">
                         jet fuel, and from which many of the chemicals used in
                         chemical research are derived. Many plastics are also hydrocarbons including high-density
@@ -79,7 +79,7 @@
                         least one carbon to carbon triple bond instead of double bonds.
                     </p>
                 </div>
-                <div class="page" id="page">
+                <div class="page" id="page3">
                     <p><strong>Nomenclature</strong></p>
                     <p>
                         Remember when we were learning to draw all the isomers for a given formula? We
@@ -98,7 +98,7 @@
                         much that can help 
                     </p>
                 </div>
-                <div class="page" id="page">
+                <div class="page" id="page4">
                     <p style="text-indent: 0%;">
                         us understand how ibuprofen interacts with the body and produces its pain
                         relieving effect. So chemists might use the name (RS)-2-[4-(2-methylpropyl)phenyl]propanoic
@@ -124,7 +124,7 @@
                         Unfortunately it isn’t always so easy. If the compounds were always 
                     </p>
                 </div>
-                <div class="page" id="page">
+                <div class="page" id="page5">
                     <p style="text-indent: 0%;">
                         drawn in the nice zig-zag
                         way you see in the table, it would be rather simple, but they aren’t always drawn so. You can see
@@ -145,7 +145,7 @@
                         numbers to all the carbons in the longest chain. Then we can identify where the substituent is by number.
                     </p>
                 </div>
-                <div class="page" id="page">
+                <div class="page" id="page6">
                     <p style="text-indent: 0%;"> 
                         While it may seem natural that we numbered the chain from left to right. We wouldn’t
                         necessarily have to do it that way. It matters which end of the chain we start numbering from. In
@@ -164,7 +164,7 @@
                         Now a word about commas and dashes. Notice we put a comma between the two 
                     </p>
                 </div>
-                <div class="page" id="page">
+                <div class="page" id="page7">
                     <p style="text-indent: 0%;">
                         numbers. That is how it is done. Commas come between twonumbers. On the other hand, dashes come between
                         a number and a name. With only a few exceptions, which we will talk about later, there are no
@@ -190,7 +190,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="page" id="page">
+                <div class="page" id="page8">
                     <p>
                         To name alkenes or alkynes we need to add four things to this process.
                     </p>
@@ -215,7 +215,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="page" id="page">
+                <div class="page" id="page9">
                     <p>
                         As we have seen, some organic compounds contain rings. When a compound contains a ring
                         there are two possibilities for how it must be named. Either the ring will be the parent or the ring
@@ -234,7 +234,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="page" id="page">
+                <div class="page" id="page10">
 
                 </div>
             </div>
