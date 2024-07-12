@@ -10,7 +10,7 @@
     background-image: linear-gradient(to top, rgba(64, 65, 46, 0.8), rgba(46, 49, 65, 0.8)), url('../../assets/background.jpg');
     background-size: auto, cover;
 	background-attachment: fixed,fixed;
-	background-position: center, start;
+	background-position: center, center;
 }
 
 footer,section { 
@@ -718,21 +718,6 @@ input[type="submit"].disabled, input[type="submit"]:disabled {
     text-transform: uppercase;
 }
 
-@media screen and (max-width: 1280px) {
-
-    #banner {
-        padding: 7em 0 8.25em 0 ;
-        background-color: #2e3141;
-        background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)); /***url("../../images/bg.jpg"); **/
-        background-size: auto,
-cover;
-        background-position: center,
-center;
-        margin-bottom: -6.5em;
-    }
-
-}
-
 @media screen and (max-width: 980px) {
 
     #banner {
@@ -747,6 +732,9 @@ center;
 }
 
 @media screen and (max-width: 736px) {
+    .inner {
+        height: 100% !important;
+    }
 
     #banner {
         padding: 5em 2em 4.25em 2em ;
@@ -762,6 +750,7 @@ center;
         }
 
     #banner h2 {
+        margin-top: 30px !important;
         font-size: 1.5em;
     }
 
@@ -1128,22 +1117,6 @@ body.is-preload #banner p {
 #footer .inner .copyright li a {
     color: inherit;
 }
-
-@media screen and (max-width: 1280px) {
-
-    #footer {
-        background-color: #2e3141;
-        background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)); /*** url("../../images/bg.jpg"); ***/
-        background-size: auto,
-cover;
-        background-position: center,
-center;
-        margin-top: -6.5em;
-        padding-top: 6.5em;
-    }
-
-}
-
 @media screen and (max-width: 980px) {
 
     #footer {
