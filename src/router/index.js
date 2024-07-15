@@ -4,6 +4,7 @@ import Unit1View from '../components/Unit 1/Element2Wide.vue'
 import Unit2View from '../components/Unit 2/Element2Wide.vue'
 import Unit3View from '../components/Unit 3/Element2Wide.vue'
 import Unit4View from '../components/Unit 4/Element2Wide.vue'
+import Credit from '../components/Credit/credits.vue'
 
 const routes=[
   {
@@ -33,6 +34,11 @@ const routes=[
     path: '/unit4',
     name: 'unit4',
     component: Unit4View
+  },
+  {
+    path: '/credit',
+    name: 'credit',
+    component: Credit
   }
 ]
 

@@ -29,18 +29,18 @@
             <div class="inner" id="inner2">
               <div class="image" id="image1">
                 <iframe scrolling="no" src="https://pubchem.ncbi.nlm.nih.gov/compound/epinephrine#section=3D-Conformer&fullscreen=true" alt="3D Model of Epinephrine"/>
+                <p class="main-content" id="description1" style=" text-align: justify; text-align-last: center">
+                <em>This is a 3D representation of the molecule epinephrine, also known as adrenaline.</em>
+                </p>
               </div>
               <div class="content">
                 <h2 class="major main-content" id="main-content1">Goal for the course</h2>
-                <p class="main-content" style="text-align: justify; text-align-last: end;">
+                <p class="main-content" id="main-content2" style="text-align: justify; text-align-last: end;">
                   Why do this? Well, you will see as we progress through the semester that organic
                   chemistry is a very visual subject. After all, organic compounds, which are the focus of 
                   our study this semester, are three dimensional objects. 
                   Understanding their composition, their properties, and their chemistry will 
                   require us to understand their 3D shapes. 
-                </p>
-                <p class="main-content" style=" text-align-last: end;">
-                This is a 3D representation of the molecule epinephrine, also known as adrenaline.
                 </p>
               </div>
             </div>
@@ -49,9 +49,13 @@
         <!-- Two -->
           <section id="two" class="wrapper alt spotlight style2">
             <div class="inner">
-              <a class="image" id="image2" style="cursor: pointer;" @click="playVideo('overlay'); playVideo('media')"><img src="@/assets/homemodel.jpg" alt="" /></a>
+              <a class="image" id="image2" style="cursor: pointer;" @click="playVideo('overlay'); playVideo('media')">
+                <img src="@/assets/homemodel.jpg" alt="" />
+                <p class="main-content" id="description2" style=" text-align: justify; text-align-last: center;">
+                  <em>These are a variety of 2D representations of the molecule epinephrine, also known as adrenaline.</em>
+                </p>
+              </a>
               <div class="content" id="content2">
-                <!--<h2 class="major main-content" id="main-content2">The importance of 2D model</h2>--->
                 <p class="main-content" id="main-content3"  style="text-align: justify;">
                   However, we often need to represent organic 
                   compounds on 2D surfaces - a piece of paper, a computer screen, or a whiteboard. 
@@ -59,9 +63,7 @@
                   3D understanding of them. This e-textbook attempts to bridge the gap between 2D pictures and 
                   3D understanding.
                 </p>
-                <p class="main-content" style=" text-align: start;">
-                  These are a variety of 2D representations of the molecule epinephrine, also known as adrenaline.
-                </p>
+            
               </div>
             </div>
           </section>

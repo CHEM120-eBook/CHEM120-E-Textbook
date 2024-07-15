@@ -4,35 +4,62 @@
       <div style="display: flex; flex-direction: row;">
         <div id="mySidemenu" class="sidemenu">
           <div class="sm-wrapper">
-            <div class="dropdown">
-              <div class="section-title" @click="openSubMenu('dropdown-content1')">Section 1</div>
-              <div class="dropdown-content" id="dropdown-content1">
-                <ul style="list-style-type: none; padding: 0;">
-                  <li><router-link to="/unit1">Unit 1. Bonding, Introduction to Structural Representations</router-link></li>
-                  <li><router-link to="/unit2">Unit 2. More Structural Representations and Isomers</router-link></li>
-                  <li><router-link to="/unit3">Unit 3. </router-link></li>
-                  <li><router-link to="/unit4">Unit 4. </router-link></li>
-                  <li><router-link to="/">Unit 5. </router-link></li>
-                  <li><router-link to="/">Unit 6. </router-link></li>
-                  <li><router-link to="/">Unit 7. </router-link></li>
-                  <li><router-link to="/">Unit 8. </router-link></li>
-                  <li><router-link to="/">Unit 9. </router-link></li>
-                  <li><router-link to="/">Unit 10. </router-link></li>
-                </ul>
+            <div class="sections">
+              <div class="dropdown">
+                <div class="section-title" @click="openSubMenu('dropdown-content1')">Section 1</div>
+                <div class="dropdown-content" id="dropdown-content1">
+                  <ul style="list-style-type: none; padding: 0;">
+                    <li><router-link to="/unit1">Unit 1. Bonding, Introduction to Structural Representations</router-link></li>
+                    <li><router-link to="/unit2">Unit 2. More Structural Representations and Isomers</router-link></li>
+                    <li><router-link to="/unit3">Unit 3. </router-link></li>
+                    <li><router-link to="/unit4">Unit 4. </router-link></li>
+                    <li><router-link to="/">Unit 5. </router-link></li>
+                    <li><router-link to="/">Unit 6. </router-link></li>
+                    <li><router-link to="/">Unit 7. </router-link></li>
+                    <li><router-link to="/">Unit 8. </router-link></li>
+                    <li><router-link to="/">Unit 9. </router-link></li>
+                    <li><router-link to="/">Unit 10. </router-link></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="dropdown">
+                <div class="section-title" href="#" @click="openSubMenu('dropdown-content3')">Section 2</div>
+                <div class="dropdown-content" id="dropdown-content3">
+                  <ul style="list-style-type: none; padding: 0;">
+                    <li><router-link to="/">Unit 11.</router-link></li>
+                    <li><router-link to="/">Unit 12. </router-link></li>
+                    <li><router-link to="/">Unit 13. </router-link></li>
+                    <li><router-link to="/">Unit 14.</router-link></li>
+                    <li><router-link to="/">Unit 15.</router-link></li>
+                    <li><router-link to="/">Unit 16.</router-link></li>
+                    <li><router-link to="/">Unit 17.</router-link></li>
+                    <li><router-link to="/">Unit 18.</router-link></li>
+                    <li><router-link to="/">Unit 19.</router-link></li>
+                    <li><router-link to="/">Unit 20.</router-link></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="dropdown">
+                <div class="section-title" href="#" @click="openSubMenu('dropdown-content2')">Section 3</div>
+                <div class="dropdown-content" id="dropdown-content2">
+                  <ul style="list-style-type: none; padding: 0;">
+                    <li><router-link to="/">Unit 21.</router-link></li>
+                    <li><router-link to="/">Unit 22. </router-link></li>
+                    <li><router-link to="/">Unit 23. </router-link></li>
+                    <li><router-link to="/">Unit 24.</router-link></li>
+                    <li><router-link to="/">Unit 25.</router-link></li>
+                    <li><router-link to="/">Unit 26.</router-link></li>
+                    <li><router-link to="/">Unit 27.</router-link></li>
+                    <li><router-link to="/">Unit 28.</router-link></li>
+                    <li><router-link to="/">Unit 29.</router-link></li>
+                    <li><router-link to="/">Unit 30.</router-link></li>
+                  </ul>
+                </div>
               </div>
             </div>
-            <div class="dropdown">
-              <div class="section-title" href="#" @click="openSubMenu('dropdown-content2')">Section 2</div>
-              <div class="dropdown-content" id="dropdown-content2">
-                <ul style="list-style-type: none; padding: 0;">
-                  <li><router-link to="/">Unit 11.</router-link></li>
-                  <li><router-link to="/">Unit 12. </router-link></li>
-                  <li><router-link to="/">Unit 13. </router-link></li>
-                </ul>
-              </div>
-            </div>
-            <div class="section-title" href="#">Section 3</div>
+            <div class="section-title" id="credit"><router-link to="/credit">Credit</router-link></div>
           </div>
+          <div class="note-taking"></div>
           <a href="javascript:void(0)" class="close" @click="closeSM">&times;</a>
         </div>
         <div id="pg-content">
@@ -102,7 +129,7 @@ export default{
       }
     },
 
-    /***mouseDownMethod (touchEvent) {
+    mouseDownMethod (touchEvent) {
       const posXStart = touchEvent.clientX;
       addEventListener('mouseup', (touchEvent) => this.mouseUpMethod(touchEvent, posXStart), {once: true});
     },
@@ -117,7 +144,9 @@ export default{
           this.next(); // swipe left
         }
       }
-    },***/
+    },
+
+
   }
 }
 </script>
@@ -135,7 +164,6 @@ export default{
 }
 
 header{
-  position: absolute;
   background-color: rgb(255, 255, 130);
 }
 
@@ -232,6 +260,11 @@ nav {
  
   /* SIDE MENU HOVER EFFECT */
  
+.sm-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
 .sm-wrapper a:after{
   z-index: -1;
   position: absolute;
@@ -260,7 +293,6 @@ nav {
   font-size: 11px;
 }
 
-
 .section-title {
   cursor: pointer;
   display: flex; 
@@ -284,10 +316,11 @@ nav {
   padding: 5px;
 }
 
+
 @media screen and (max-width: 600px), 
 (orientation: portrait) {
   .web-title {
-    font-size: 150% !important;
+    min-height: 200% !important;
   }
   .open {
     font-size: 100% !important;
@@ -295,17 +328,20 @@ nav {
   .section-title {
     min-width: 300px;
   }
-  .web-title {
-    min-height: 200% !important;
-  }
   nav {
     height: 59px !important;
   }
 }
 
-@media screen and (max-width: 365px) {
+@media screen and (max-width: 600px) {
   .web-title {
     font-size: 130% !important;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .web-title {
+    font-size: 120% !important;
   }
   .open {
     font-size: 100% !important;
