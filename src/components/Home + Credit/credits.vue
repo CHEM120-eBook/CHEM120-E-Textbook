@@ -116,24 +116,28 @@ p {
 					<article>
 						<img src="@/assets/Unknown_person.jpg" alt="" />
 						<h3 class="major">Name</h3>
+						<p>Class of 202?</p>
 						<p>Major</p>
 						<p><em>name@gmail.com</em></p>
 					</article>
 					<article>
 						<img src="@/assets/Unknown_person.jpg" alt="" />
 						<h3 class="major">Name</h3>
+						<p>Class of 202?</p>
 						<p>Major</p>
 						<p><em>name@gmail.com</em></p>
 					</article>
 					<article>
 						<img src="@/assets/Unknown_person.jpg" alt="" />
 						<h3 class="major">Name</h3>
+						<p>Class of 202?</p>
 						<p>Major</p>
 						<p><em>name@gmail.com</em></p>
 					</article>
 					<article>
 						<img src="@/assets/Unknown_person.jpg" alt="" />
 						<h3 class="major">Name</h3>
+						<p>Class of 202?</p>
 						<p>Major</p>
 						<p><em>name@gmail.com</em></p>
 					</article>
@@ -149,24 +153,28 @@ p {
 					<article>
 						<img src="@/assets/Unknown_person.jpg" alt="" />
 						<h3 class="major">Name</h3>
+						<p>Class of 202?</p>
 						<p>Major</p>
 						<p><em>name@gmail.com</em></p>
 					</article>
 					<article>
 						<img src="@/assets/Unknown_person.jpg" alt="" />
 						<h3 class="major">Name</h3>
+						<p>Class of 202?</p>
 						<p>Major</p>
 						<p><em>name@gmail.com</em></p>
 					</article>
 					<article>
 						<img src="@/assets/Unknown_person.jpg" alt="" />
 						<h3 class="major">Name</h3>
+						<p>Class of 202?</p>
 						<p>Major</p>
 						<p><em>name@gmail.com</em></p>
 					</article>
 					<article>
 						<img src="@/assets/Unknown_person.jpg" alt="" />
 						<h3 class="major">Name</h3>
+						<p>Class of 202?</p>
 						<p>Major</p>
 						<p><em>name@gmail.com</em></p>
 					</article>
