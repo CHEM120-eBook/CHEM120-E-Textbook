@@ -1,5 +1,5 @@
-<style scoped src="@/components/Home/homeStyle.css"></style>
-<script src='@/components/Home/main.js'></script>
+<style scoped src="@/components/Home + Credit/style.css"></style>
+<script src='@/components/Home + Credit/main.js'></script>
 <template>
   <div id="overlay" class="overlay" @click="clickOut('overlay'); clickOut('media')"></div>
   <img id="media" class="media" src="@/assets/homemodel.jpg"> 
@@ -10,7 +10,7 @@
       <section id="banner">
         <div class="inner">
           <h2>Organic Chemistry E-Text</h2>
-          <p class="intro" id="text1" style="text-align: justify; text-align-last: center;">
+          <p class="intro" id="text2" style="text-align: justify; text-align-last: center;">
             Welcome to the Chem 120 Organic Chemistry Electronic Textbook. 
             You may have encountered electronic textbooks before. 
             In most cases you probably found that they were basically 
@@ -63,7 +63,6 @@
                   3D understanding of them. This e-textbook attempts to bridge the gap between 2D pictures and 
                   3D understanding.
                 </p>
-            
               </div>
             </div>
           </section>

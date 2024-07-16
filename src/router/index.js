@@ -1,10 +1,10 @@
 import { createRouter, createWebHashHistory} from 'vue-router'
-import HomeView from '../components/Home/HomeView.vue'
+import HomeView from '../components/Home + Credit/HomeView.vue'
 import Unit1View from '../components/Unit 1/Element2Wide.vue'
 import Unit2View from '../components/Unit 2/Element2Wide.vue'
 import Unit3View from '../components/Unit 3/Element2Wide.vue'
 import Unit4View from '../components/Unit 4/Element2Wide.vue'
-import Credit from '../components/Credit/credits.vue'
+import Credit from '../components/Home + Credit/credits.vue'
 
 const routes=[
   {
