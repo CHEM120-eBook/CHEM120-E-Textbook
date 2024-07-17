@@ -10,7 +10,7 @@
       <section id="banner">
         <div class="inner">
           <h2>Organic Chemistry E-Text</h2>
-          <p class="intro" id="text2" style="text-align: justify; text-align-last: center;">
+          <p class="intro" id="text1" style="text-align: justify; text-align-last: center;">
             Welcome to the Chem 120 Organic Chemistry Electronic Textbook. 
             You may have encountered electronic textbooks before. 
             In most cases you probably found that they were basically 

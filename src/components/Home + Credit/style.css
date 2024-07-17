@@ -724,14 +724,6 @@ input[type="submit"].disabled, input[type="submit"]:disabled {
         margin-bottom: -2.5em;
     }
 
-    #banner .logo {
-        margin: 0 0 1em 0;
-    }
-
-        #banner .logo .icon {
-            font-size: 1.5em;
-        }
-
     #banner h2 {
         font-size: 1.5em;
     }

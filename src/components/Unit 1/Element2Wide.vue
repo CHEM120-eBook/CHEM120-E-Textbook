@@ -5,7 +5,7 @@
             (See "ScrollView.vue")
         -->
         <!--
-            Code reference: Adeoye's blog article "How to build a Vuejs image slider"
+            Code reference: Adeoye's blog article "How to build a Vuejs image slider" 
             https://medium.com/@davidola360/how-to-create-a-vuejs-image-slider-60b4be844081
         -->
         <div class="container" id="container" @keyup="created">

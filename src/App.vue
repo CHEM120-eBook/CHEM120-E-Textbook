@@ -60,7 +60,7 @@
             <div class="section-title" id="credit"><router-link to="/credit">Credit</router-link></div>
           </div>
           <div class="note-taking"></div>
-          <a href="javascript:void(0)" class="close" @click="closeSM">&times;</a>
+          <a href="javascript:void(0)" class="close" @click="closeSM">X</a>
         </div>
         <div id="pg-content">
           <div class="open" @click="openSM">&#9776;</div>
@@ -305,7 +305,7 @@ nav {
   font-family: "League Spartan", sans-serif;
   color: #ffffff;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   transition: 0.3s;
 }
  

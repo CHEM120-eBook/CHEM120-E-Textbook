@@ -1,5 +1,9 @@
 <style scoped src="@/components/Home + Credit/style.css"></style>
 <style scoped>
+.body {
+    background-image: linear-gradient(to top, rgba(64, 65, 46, 0.8), rgba(46, 49, 65, 0.8)), url('../../assets/background4.jpg');
+}
+
 /* Features */
 .inner {
 	flex-direction: column !important;
@@ -34,16 +38,15 @@ p {
 
 .features article {
 	display: flex;
+	overflow: visible;
 	flex-direction: column;
 	justify-items: center !important;
 	padding: 1em 1em 3em 1em ;
 	background-color: #353849;
 	border-radius: 5px;
 	margin: 1.5em 2em 1.5em 0;
-	width: calc(20% - 1.5em);
+	width: 20%;
 }
-
-
 
 .features article  img {
 	margin-bottom: 1.5em;
@@ -51,16 +54,18 @@ p {
 	width: 100% !important;
 }
 
-		
+@media screen and (max-width: 1031px) {
+	.features article {
+	width: 40%;
+	}
+}		
 
 @media screen and (max-width: 736px) {
-
-	.features article {
-		padding: 1.5em 1.5em 0.1em 1.5em ;
-		margin: 0.875em 1.75em 0.875em 0;
-		width: calc(50% - 0.875em - 1px);
+	#inner1, #inner2 {
+		align-items: center;
+		justify-content: center;
 	}
-
+	
 	.features article .image {
 		margin-bottom: 1.5em;
 		margin-left: -1.5em;
@@ -70,7 +75,15 @@ p {
 
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
+	#banner{
+		padding: 200px 0 !important;
+	}
+	.features article {
+
+		margin: 0.875em 1.75em 0.875em 0;
+		width: calc(50% - 0.875em - 1px);
+	}
 
 	.features {
 		display: block;
@@ -90,6 +103,37 @@ p {
     margin-bottom: 0.8em;
     padding-bottom: 0.4em;
 }
+
+@media screen and (max-width: 980px) {
+
+#footer {
+	padding: 12em 3em 12.375em 3em ;
+	margin-bottom: -4.75em;
+}
+
+#footer .inner {
+	width: 100%;
+}
+
+}
+
+@media screen and (max-width: 736px) {
+
+#footer {
+	padding: 6em 0 5.25em 0 ;
+	margin-bottom: -2.5em;
+}
+
+#footer h2 {
+	font-size: 1.5em;
+}
+
+#footer p {
+	font-size: 0.8em;
+}
+
+
+}
 </style>
 <template>
   <div class="body">
@@ -99,7 +143,7 @@ p {
       <section id="banner">
         <div class="inner">
           <h2>Credit</h2>
-          <p class="intro" id="text1" style="text-align: justify; text-align-last: center;">
+          <p class="intro" id="text1" style="text-align: center;">
             Individuals that contributed to our project
           </p>
         </div>
