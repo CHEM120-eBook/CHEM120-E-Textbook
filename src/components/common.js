@@ -164,7 +164,7 @@ export default {
         touchEndMethod (touchEvent, posXStart, posYStart) {
             const posXEnd = touchEvent.changedTouches[0].clientX;
             const posYEnd = touchEvent.changedTouches[0].clientY;
-            if ((Math.abs(posYEnd - posYStart) <= 50) && (Math.abs(posXEnd - posXStart) >= 100)) {
+            if ((Math.abs(posYEnd - posYStart) <= 50) && (Math.abs(posXEnd - posXStart) >= 100) && (cellText.type != 'Range')) {
                 if (posXStart < posXEnd) {
                     this.previous(); // swipe right
                 } else if (posXStart > posXEnd) {
