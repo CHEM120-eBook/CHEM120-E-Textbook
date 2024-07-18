@@ -164,7 +164,7 @@ export default {
         touchEndMethod (touchEvent, posXStart, posYStart) {
             const posXEnd = touchEvent.changedTouches[0].clientX;
             const posYEnd = touchEvent.changedTouches[0].clientY;
-            if (Math.abs(posYEnd - posYStart) <= 100) {
+            if ((Math.abs(posYEnd - posYStart) <= 50) && (Math.abs(posXEnd - posXStart) >= 100)) {
                 if (posXStart < posXEnd) {
                     this.previous(); // swipe right
                 } else if (posXStart > posXEnd) {
@@ -173,18 +173,18 @@ export default {
             }
         },
 
-        mouseDownMethod (touchEvent) {
-            /***if (touchEvent.changedTouches.length !== 1) { // Only care if one finger is used
+        /***mouseDownMethod (touchEvent) {
+            if (touchEvent.changedTouches.length !== 1) { // Only care if one finger is used
                 return;
-            } ***/
+            }
             const posXStart = touchEvent.clientX;
             addEventListener('mouseup', (touchEvent) => this.mouseUpMethod(touchEvent, posXStart), {once: true});
         },
 
         mouseUpMethod (touchEvent, posXStart) {
-            /***if (touchEvent.changedTouches.length !== 1) { // Only care if one finger is used
+            if (touchEvent.changedTouches.length !== 1) { // Only care if one finger is used
                 return;
-            }***/
+            }
             const cellText = document.getSelection();
             const posXEnd = touchEvent.clientX;
             if (cellText.type != 'Range') {
@@ -194,6 +194,6 @@ export default {
                     this.next(); // swipe left
                 }
             }
-        },
+        },***/
     },
 }
