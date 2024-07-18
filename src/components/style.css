@@ -14,6 +14,7 @@
   display: flex; 
   flex-direction: row; 
   justify-content: space-around;
+  height: 18vh;
 }
 
 /* Header */
@@ -69,7 +70,7 @@ display:none;
   margin: auto;
   color:white;
   cursor: pointer;
-  display:none;
+  display: none;
 }
 .title {
   font-family: "League Spartan", sans-serif;
@@ -83,9 +84,9 @@ display:none;
   position: absolute;
   display: flex;
   width: 140px;
-  justify-content: center;
-  justify-self: center;
-  border-radius: 35px;
+  justify-content: center !important;
+  justify-self: center !important;
+  border-radius: 50px;
   right: 3.5%;
   bottom: 5%;
 }
@@ -94,13 +95,14 @@ display:none;
   background: transparent;
   opacity: 0.3;
   display: flex;
-  margin: auto;
+  margin-top: 15px;
   align-items: center;
   justify-self: center;
-  height: 70px;
   color: rgb(255, 255, 130) ;
   border: none;
+  height: 70px;
   font-size: 90px;
+  font-weight: bold;
 }
 
 .nav-buttons :hover {

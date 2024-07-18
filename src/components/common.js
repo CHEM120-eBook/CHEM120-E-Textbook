@@ -49,6 +49,12 @@ export default {
             }
         },
 
+        openIframe(id) {
+            document.getElementById(id).style.visibility = "visible";
+        },
+        closeIframe(id){
+            document.getElementById(id).style.visibility = "hidden";
+        },
         ////playVideo() invokes the overlay area that has a video on top of it.
         playVideo(id){
             document.getElementById(id).style.display = "flex";

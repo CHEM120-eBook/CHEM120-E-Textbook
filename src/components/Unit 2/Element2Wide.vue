@@ -19,11 +19,9 @@
             <video id="media1" class="media" width="80%" controls>
                 <source src="" type="video/mp4" showControl>
             </video>
-            <div id="media2" class="media">
-                <div style="position:absolute; right: 0%; top: -70px; width: 100%; height: 120%; background-color: grey;"></div>
-                <iframe style="position: absolute; height: 120%; width: 100vw; top: -70px;" frameBorder="0" scrolling="no" src="http://localhost:5500/"
-                width="100%" height="100%"></iframe>
-                <button style="position: absolute; right: 10%; top: -70px" @click="closeVideo('media2')">X</button>
+            <div id="game1" class="game">
+                <button style="position: fixed; right: 15%; top: 0; z-index: 10;" @click="closeIframe('game1')">X</button>
+                <iframe src="http://jefhans4.github.io/IsomerGame/"></iframe>
             </div>
         
 
@@ -79,7 +77,7 @@
                 <div class="page" id="page4" @click="PlsAcceptMe">
                     <div style="background-color: rgb(255, 255, 130); margin-bottom: 30px;">
                         <div style="color: black;">Isomer Game </div> 
-                        <button style="border-radius: 30%; border: none;" @click="playVideo('media2')">Play</button>
+                        <button style="border-radius: 30%; border: none;" @click="openIframe('game1')">Play</button>
                     </div>
                 </div>
             </div>
@@ -91,6 +89,27 @@
 </template>
 
 <script unit2 src='@/components/common.js'>
-
 </script>
 <style scoped src="@/components/style.css"></style>
+<style scoped>
+
+#game1 {
+    visibility: hidden;
+}
+
+iframe{
+    position:fixed; 
+    top:0; 
+    left:0; 
+    bottom:0; 
+    right:0; 
+    width:100%; 
+    height:100%; 
+    border:none; 
+    margin:0; 
+    padding:0; 
+    overflow:hidden; 
+    background-color: gray;
+    z-index: 9;
+}
+</style>
