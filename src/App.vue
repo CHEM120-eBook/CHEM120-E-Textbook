@@ -2,7 +2,7 @@
  <header>
     <nav>
       <div style="display: flex; flex-direction: row;">
-        <div id="mySidemenu" class="sidemenu">
+        <div id="mySidemenu" class="sidemenu" @touchstart="touchStartMethod">
           <div class="sm-wrapper">
             <div class="sections">
               <div class="dropdown">
@@ -89,27 +89,20 @@ export default{
 
   methods: {
     openSM(){
-      if ((parseInt( document.getElementById("mySidemenu").style.width) == 450)|| (parseInt(document.getElementById("mySidemenu").style.width) == 350)) {
-        this.closeSM();
+      if (parseInt(document.getElementById("mySidemenu").style.width) == 450) {
+        this.closeSM()
       }
       else {
-        if (window.innerWidth <= 1020) {
-          if (window.innerWidth <= 600) {
-            document.getElementById("mySidemenu").style.width ="350px";
-          }
-          else {
-            document.getElementById("mySidemenu").style.width ="450px"
-          }
-        }
-        else {
-          document.getElementById("mySidemenu").style.width ="450px";
+        let width = window.innerWidth <= 600 ? 350 : 450;
+        document.getElementById("mySidemenu").style.width = width + "px";
+        if (window.innerWidth > 1020) {
           document.getElementById("pg-content").style.marginLeft = "450px";
-        }
+        };
       }
     },
 
     clickOut(){
-      if ((parseInt(document.getElementById("mySidemenu").style.width) == 450) || (parseInt(document.getElementById("mySidemenu").style.width) == 350)) {
+      if (parseInt(document.getElementById("mySidemenu").style.width) == (450) || (350)) {
         this.closeSM();
       }
     },
@@ -121,32 +114,25 @@ export default{
 
     openSubMenu(id){
       const el = document.getElementById(id);
-      if (window.getComputedStyle(el).display == "block") {
-        el.style.display = "none";
-      }
-      else {
-        el.style.display = "block";
-      }
+      let displayStatus = window.getComputedStyle(el).display == "block" ? "none" : "block";
+      el.style.display = displayStatus;
     },
 
-    mouseDownMethod (touchEvent) {
-      const posXStart = touchEvent.clientX;
-      addEventListener('mouseup', (touchEvent) => this.mouseUpMethod(touchEvent, posXStart), {once: true});
+    touchStartMethod (touchEvent) {
+      const posXStart = touchEvent.changedTouches[0].clientX;
+      const posYStart = touchEvent.changedTouches[0].clientY;
+      addEventListener('touchend', (touchEvent) => this.touchEndMethod(touchEvent, posXStart, posYStart), {once: true});
     },
 
-    mouseUpMethod (touchEvent, posXStart) {
-      const cellText = document.getSelection();
-      const posXEnd = touchEvent.clientX;
-      if (cellText.type != 'Range') {
-        if (posXStart < posXEnd) {
-          this.previous(); // swipe right
-        } else if (posXStart > posXEnd) {
-          this.next(); // swipe left
+    touchEndMethod (touchEvent, posXStart, posYStart) {
+      const posXEnd = touchEvent.changedTouches[0].clientX;
+      const posYEnd = touchEvent.changedTouches[0].clientY;
+      if ((Math.abs(posYEnd - posYStart) <= 50) && (Math.abs(posXEnd - posXStart) >= 100)) {
+        if (posXStart > posXEnd) {
+            this.closeSM(); // swipe left to close
         }
       }
     },
-
-
   }
 }
 </script>

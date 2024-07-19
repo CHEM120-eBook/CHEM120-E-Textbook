@@ -57,11 +57,11 @@ export default {
         closeVideo(id){
             document.getElementById(id).style.display = "none";
         },
-        play3D(){
-            document.getElementById("overlay2").style.display = "flex";
+        play3D(id){
+            document.getElementById(id).style.display = "flex";
         },
         close3D(){
-            document.getElementById("overlay2").style.display = "none";
+            document.getElementById(id).style.display = "none";
         },
         clickOut(cls){
             const el = document.getElementsByClassName(cls);
@@ -74,8 +74,8 @@ export default {
         //the whole slide.
         handleScroll() {
             let pageArr = document.getElementsByClassName("page");
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            //var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            //var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             //var scrolled = (winScroll / height) * 100;
             //var totalWidth = screen.availWidth;
             var totalWidth = document.getElementById("slide").offsetWidth;
@@ -158,8 +158,7 @@ export default {
         touchEndMethod (touchEvent, posXStart, posYStart) {
             const posXEnd = touchEvent.changedTouches[0].clientX;
             const posYEnd = touchEvent.changedTouches[0].clientY;
-            if ((Math.abs(posYEnd - posYStart) <= 50) && (Math.abs(posXEnd -
-                 posXStart) >= 100)) {
+            if ((Math.abs(posYEnd - posYStart) <= 50) && (Math.abs(posXEnd - posXStart) >= 100)) {
                 if (posXStart < posXEnd) {
                     this.previous(); // swipe right
                 } else if (posXStart > posXEnd) {
