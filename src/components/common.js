@@ -105,49 +105,21 @@ export default {
 
         scroll(position) {
             let el = document.getElementById("slide");
-            if ((window.innerWidth >= window.innerHeight) 
-            && (window.innerWidth > 1300)) {
-                let width = document.getElementById("container").offsetWidth/2;
-                let pos = 0;
-                let id = setInterval(frame, 10);
-                let num = 10 - this.frame //put the total number of pages here
-                //let width = (screen.availWidth-160)*0.5;
-                let resize = num * width
-                let check = position == "reset" ? resize : width 
-                function frame() {
-                    if (pos >= check) {
-                        clearInterval(id);
-                    }
-                    else {
-                        pos += 5;
-                        if(position == 'next'){  
-                            el.scrollLeft +=  12;
-                        }
-                        else{
-                            el.scrollLeft -= 12;
-                        }
-                    }
-                }
-                console.log(window.innerWidth);
-            }
-            else {
-                let page = document.getElementsByClassName("page")[0].offsetWidth;
-                let width = (window.innerWidth > 600) && (window.innerWidth > window.innerHeight) ? page * 2 : page;
-                if(position == 'next'){  
-                    el.scrollLeft += width;
-                }
-                else{
-                    el.scrollLeft -= width;
-                }
-                
-            }
+            let page = document.getElementsByClassName("page")[0].offsetWidth;
+            let width = (window.innerWidth > 600) && (window.innerWidth > window.innerHeight) ? page * 2 : page;
+            let scrollValue = position == 'next' ? width : -width;
+            el.scrollBy({
+                left: scrollValue,
+                top: 0,
+                behavior: 'smooth'
+            })
         },
 
-        resetScroll(){
-            this.count = 0
-            this.direction = "forward"
-            this.scroll("reset")
-        },
+        ///resetScroll(){
+        ///    this.count = 0
+        ///    this.direction = "forward"
+        ///    this.scroll("reset")
+        ///},
  
         touchStartMethod (touchEvent) {
             const posXStart = touchEvent.changedTouches[0].clientX;
