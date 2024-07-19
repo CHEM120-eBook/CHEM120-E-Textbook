@@ -24,7 +24,6 @@
                 <iframe src="http://jefhans4.github.io/IsomerGame/"></iframe>
             </div>
         
-
             <p class="title">
                 Unit 2. More Structural Representations and Isomers
             </p>
@@ -61,7 +60,7 @@
                         Let’s see some examples.
                     </p>
                 </div>
-                <div class="page" id="page3">
+                <div class="page" id="page3" style="display: flex; flex-direction: column; align-items: center;">
                     <p><strong>Isomers</strong></p>
                     <p>
                         
@@ -73,12 +72,12 @@
                         trivial, but it isn’t necessarily. Especially as structures become more complex we will see that
                         there may be many ways to draw the same structure. 
                     </p>
-                </div>
-                <div class="page" id="page4" @click="PlsAcceptMe">
-                    <div style="background-color: rgb(255, 255, 130); margin-bottom: 30px;">
-                        <div style="color: black;">Isomer Game </div> 
+                    <div style="background-color: rgb(255, 255, 130); margin: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 20%; width: 50%; border-radius: 10%; ">
+                        <h3 style="color: black; text-align: center; width: 100%;">Isomer Game </h3> 
                         <button style="border-radius: 30%; border: none;" @click="openIframe('game1')">Play</button>
                     </div>
+                </div>
+                <div class="page" id="page4">
                 </div>
             </div>
             <div class="progress-container">

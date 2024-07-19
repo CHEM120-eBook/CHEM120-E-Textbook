@@ -138,7 +138,7 @@ export default {
             }
             else {
                 let page = document.getElementsByClassName("page")[0].offsetWidth;
-                let width = (window.innerWidth > 600) && (window.innerWidth > window.innerWidth) ? page * 2 : page;
+                let width = (window.innerWidth > 600) && (window.innerWidth > window.innerHeight) ? page * 2 : page;
                 if(position == 'next'){  
                     el.scrollLeft += width;
                 }
@@ -164,7 +164,8 @@ export default {
         touchEndMethod (touchEvent, posXStart, posYStart) {
             const posXEnd = touchEvent.changedTouches[0].clientX;
             const posYEnd = touchEvent.changedTouches[0].clientY;
-            if ((Math.abs(posYEnd - posYStart) <= 50) && (Math.abs(posXEnd - posXStart) >= 100) && (cellText.type != 'Range')) {
+            if ((Math.abs(posYEnd - posYStart) <= 50) && (Math.abs(posXEnd -
+                 posXStart) >= 100)) {
                 if (posXStart < posXEnd) {
                     this.previous(); // swipe right
                 } else if (posXStart > posXEnd) {
