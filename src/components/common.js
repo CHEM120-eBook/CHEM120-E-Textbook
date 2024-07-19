@@ -8,6 +8,8 @@ export default {
             count: 0,
             direction: 'forward',
             frame: 2,
+            lastClick: 0,
+            delay: 690,
         }
     },
     created(){
@@ -82,9 +84,13 @@ export default {
             var scrolled = (window.innerWidth <= window.innerHeight) ? totalWidth / (pageArr.length - 1) : totalWidth / (pageArr.length/2 - 1); 
             document.getElementById("myBar").style.width = scrolled*this.count + "px";
             console.log(this.count)
+            
         },
 
         previous() {
+            if (this.lastClick >= (Date.now() - this.delay))
+                return;
+            this.lastClick = Date.now();
             if(this.count > 0){ //12 because the current slide has 12 pages
                 this.count--
                 this.scroll("previous")
@@ -93,6 +99,9 @@ export default {
         },
 
         next() {
+            if (this.lastClick >= (Date.now() - this.delay))
+                return;
+            this.lastClick = Date.now();
             let pageArr = document.getElementsByClassName("page");
             let limit = window.innerWidth >= window.innerHeight && window.innerWidth > 600 ? pageArr.length / 2 - 1 : pageArr.length - 1;
             if(this.count < limit){
