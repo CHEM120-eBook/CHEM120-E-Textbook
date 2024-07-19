@@ -31,21 +31,15 @@ export default {
     methods:{
         resizeAdjust() {
             let pageArr = document.getElementsByClassName("page");
+            pageArr[this.count * 2].scrollIntoView({ 
+                behavior: "instant", 
+                block: "start", 
+                inline: "start" });
             if (window.innerWidth >= window.innerHeight && window.innerWidth > 800)  {
-                pageArr[this.count * 2].scrollIntoView({ 
-                    behavior: "instant", 
-                    block: "start", 
-                    inline: "start" });
                 pageArr[this.count * 2 + 1].scrollIntoView({ 
                     behavior: "instant", 
                     block: "start", 
                     inline: "end" });
-            }
-            else {
-                pageArr[this.count].scrollIntoView({ 
-                    behavior: "instant", 
-                    block: "start", 
-                    inline: "start" });
             }
         },
 
