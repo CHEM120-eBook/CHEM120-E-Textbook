@@ -1,77 +1,3 @@
-.background {
-  display: flex;
-  align-items: center !important;
-  justify-content: center !important;
-  height: 95vh ;
-  width: 100% ;
-}
-
-#page2 > div > div > img {
-  max-width:130px;
-}
-
-.podcast {
-  display: flex; 
-  flex-direction: row; 
-  justify-content: space-around;
-  height: 18vh;
-}
-
-/* Header */
-#app {
-font-family: Avenir, Helvetica, Arial, sans-serif;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-text-align: center;
-color: #2c3e50;
-background-color: rgb(72, 72, 72);
-overflow: hidden;
-max-width: 100%;
-}
-
-header{
-background-color: rgb(255,244,79);
-}
-
-nav {
-margin-left:5%;
-display: flex;
-}
-
-nav a {
-font-weight: bold;
-color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-color: #42b983;
-}
-
-.overlay{
-position:fixed;
-flex-direction: column;
-justify-content: flex-start;
-align-items: flex-start;
-background-color: rgba(67, 67, 67, 0.6);
-width:100%;
-height:120%;
-color:white;
-cursor: pointer;
-display:none;
-}
-
-.media {
-  width: 80%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 15%;
-  bottom: 0;
-  margin: auto;
-  color:white;
-  cursor: pointer;
-  display: none;
-}
 .title {
   font-family: "League Spartan", sans-serif;
   margin: 1vw;
@@ -79,134 +5,74 @@ display:none;
   font-size: 230%;
 }
 
-.nav-buttons {
-  background-color: rgba(128, 128, 128, 0.1);
-  position: absolute;
+.background {
   display: flex;
-  width: 140px;
+  align-items: center !important;
   justify-content: center !important;
-  justify-self: center !important;
-  border-radius: 50px;
-  right: 3.5%;
-  bottom: 5%;
+  height: 95vh ;
 }
 
-.control {
-  background: transparent;
-  opacity: 0.3;
+@media (max-width: 600px),
+(orientation:portrait) {
+  .background {
+    height: 100vh;
+  }
+}
+
+/***Slide***/
+.container {
   display: flex;
-  margin-top: 15px;
+  flex-direction: column;
   align-items: center;
-  justify-self: center;
-  color: rgb(255, 255, 130) ;
-  border: none;
-  height: 70px;
-  font-size: 90px;
-  font-weight: bold;
+  margin: 0;
+  min-width: 97vw !important;
+  padding-bottom: 0;
+  height:100%;
+  padding-right: 0;
+  padding-left: 0;
 }
 
-.nav-buttons :hover {
-  opacity: 0.5;
-}
 
 #slide {
-height: 80vh !important;
-width: 120% !important;
-display: flex;
-overflow: hidden;
-align-items: flex-start;
-text-indent: 2%;
-}
-
-.container {
-display: flex;
-flex-direction: column;
-align-items: center;
-margin: 0;
-max-width: 81vw !important;
-padding-bottom: 0;
-height:100%;
-padding-right: 0;
-padding-left: 0;
+  height: 80vh !important;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  align-items: flex-start;
+  text-indent: 2%;
 }
 
 #slide > div {
-padding: 2%;
-min-width: 50%;
-height: 100%;
-min-height: 400px;
-padding-right: 2%;
-padding-left:2%;
-box-sizing: border-box;
-background-color: aliceblue;
-text-align: left;
-margin:0;
-overflow-y: scroll !important; 
--ms-overflow-style: none;  
-scrollbar-width: none;  
+  padding: 2%;
+  min-width: 50%;
+  height: 100%;
+  min-height: 400px;
+  padding-right: 2%;
+  padding-left:2%;
+  box-sizing: border-box;
+  background-color: aliceblue;
+  text-align: left;
+  margin:0;
+  overflow-y: scroll !important; 
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+  
+  }
+  #slide > div::-webkit-scrollbar {
+  display: none;
+  }
 
-}
-#slide > div::-webkit-scrollbar {
-display: none;
-}
+  #slide > .page > p {
+    margin: 12.5px;
+    font-size: 120%;
+    font-family:"League Spartan",sans-serif;
+    text-align: justify;
+  }
 
-.video {
-  display: flex; 
-  overflow: hidden;
-  flex-direction: column; 
-  height: 29vh;
-  width: 70%;
-  padding:2%;
-  color: #FFFFFF;
-  background: #212121;
-  text-align: center;
-  border-radius: 20px;
-  margin-left: auto; 
-  margin-right: auto;
-  overflow: hidden
+#page2 > div > div > img {
+  max-width:130px;
 }
 
-.vid-title {
-  margin-bottom: 3vh !important;
-  font-size: 16px;
-  text-align: center;
-}
-
-.thumbnail {
-  width: 40%; 
-  height: 19vh; 
-  cursor: pointer;
-}
-
-#slide > div > textarea{
-  margin: 0 4% 4% 4%;
-  width:95%;
-  height:10%;
-}
-
-.progress-container {
-width: 120%;
-height: 1%;
-background: #cccccc;
-margin:0;
-}
-
-.progress-bar {
-height: 8px;
-background: #04AA6D;
-width: 0%;
-min-width:0%;
-max-width:100%;
-}
-
-#slide > .page > p {
-  margin: 12.5px;
-  font-size: 120%;
-  font-family:"League Spartan",sans-serif;
-  text-align: justify;
-}
-
-/*** Media Quiries for Width ***/
 @media (max-width: 600px),
 (orientation:portrait) {
   .background {
@@ -221,12 +87,6 @@ max-width:100%;
   }
   .container {
       min-width: 85.3vw;
-  }
-  .control {
-      font-size: 70px;
-  }
-  .nav-buttons {
-      width: 100px;
   }
 }
 
@@ -259,12 +119,6 @@ max-width:100%;
   }
 }
 
-@media (max-width: 600px) and (orientation:portrait) {
-  .thumbnail {
-    width: 70%;
-  }
-}
-
 @media screen and (min-height: 1200px) {
   #slide > .page > p {
       font-size: 210%;
@@ -289,31 +143,136 @@ max-width:100%;
 
   }
 }
-/*** @media screen and (min-width: 426px) and (max-width:499px) {
-  #slide {
-      width: 85.5%;
-  }
-  .progress-container {
-      width: 86%;
+/***MEDIA (GENERAL)***/
+.overlay{
+  position:fixed;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: rgba(67, 67, 67, 0.6);
+  width:100%;
+  height:120%;
+  color:white;
+  cursor: pointer;
+  display:none;
+}
+
+.media {
+  width: 80%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 15%;
+  bottom: 0;
+  margin: auto;
+  color:white;
+  cursor: pointer;
+  display: none;
+}
+
+/***PODCAST***/
+.podcast {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-around;
+  height: 18vh;
+}
+
+/***VIDEO***/
+.video {
+  display: flex; 
+  overflow: hidden;
+  flex-direction: column; 
+  height: 29vh;
+  width: 70%;
+  padding:2%;
+  color: #FFFFFF;
+  background: #212121;
+  text-align: center;
+  border-radius: 20px;
+  margin-left: auto; 
+  margin-right: auto;
+  overflow: hidden
+}
+
+.vid-title {
+  margin-bottom: 3vh !important;
+  font-size: 16px;
+  text-align: center;
+}
+
+.thumbnail {
+  width: 40%; 
+  height: 19vh; 
+  cursor: pointer;
+}
+
+@media (max-width: 600px) and (orientation:portrait) {
+  .thumbnail {
+    width: 70%;
   }
 }
 
-@media screen and (min-width: 1600px) {
-  #slide {
-      width: 120%;
-  }
+/***CONTROL BUTTONS***/
+.control {
+  background: transparent;
+  opacity: 0.3;
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+  justify-self: center;
+  color: rgb(255, 255, 130) ;
+  border: none;
+  height: 70px;
+  font-size: 90px;
+  font-weight: bold;
+}
 
-  .progress-container {
-      width: 120%;
+.nav-buttons {
+  background-color: rgba(128, 128, 128, 0.1);
+  position: absolute;
+  display: flex;
+  width: 140px;
+  justify-content: center !important;
+  justify-self: center !important;
+  border-radius: 50px;
+  right: 3.5%;
+  bottom: 5%;
+}
+
+.nav-buttons :hover {
+  opacity: 0.5;
+}
+
+@media (max-width: 600px),
+(orientation:portrait) {
+  .control {
+      font-size: 70px;
+  }
+  .nav-buttons {
+      width: 100px;
   }
 }
 
-@media screen and (min-width: 2560px) {
-  #slide {
-      width: 177%;
-  }
-  .progress-container {
-      width: 177%;
-  }
-} ***/
+/***ANSWER BOX***/
+#slide > div > textarea{
+  margin: 0 4% 4% 4%;
+  width:95%;
+  height:10%;
+}
 
+/***PROGRESS CONTAINER***/
+.progress-container {
+width: 100%;
+height: 1%;
+background: #cccccc;
+margin:0;
+}
+
+.progress-bar {
+height: 8px;
+background: #04AA6D;
+width: 0%;
+min-width:0%;
+max-width:100%;
+}

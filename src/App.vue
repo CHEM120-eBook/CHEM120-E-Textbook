@@ -88,6 +88,7 @@ export default{
   },
 
   methods: {
+    ///Open + close sidemenu
     openSM(){
       if (parseInt(document.getElementById("mySidemenu").style.width) == 450) {
         this.closeSM()
@@ -101,23 +102,27 @@ export default{
       }
     },
 
+    ///Close sidemenu upon clicking outside
     clickOut(){
       if (parseInt(document.getElementById("mySidemenu").style.width) == (450) || (350)) {
         this.closeSM();
       }
     },
     
+    ///Close sidemenu
     closeSM(){
       document.getElementById("mySidemenu").style.width = "0";
       document.getElementById("pg-content").style.marginLeft ="0";
     },
 
+    ///Open dropdown submenu when clicking on title
     openSubMenu(id){
       const el = document.getElementById(id);
       let displayStatus = window.getComputedStyle(el).display == "block" ? "none" : "block";
       el.style.display = displayStatus;
     },
 
+    ///For swipe to close sidebar
     touchStartMethod (touchEvent) {
       const posXStart = touchEvent.changedTouches[0].clientX;
       const posYStart = touchEvent.changedTouches[0].clientY;
@@ -129,7 +134,7 @@ export default{
       const posYEnd = touchEvent.changedTouches[0].clientY;
       if ((Math.abs(posYEnd - posYStart) <= 50) && (Math.abs(posXEnd - posXStart) >= 100)) {
         if (posXStart > posXEnd) {
-            this.closeSM(); // swipe left to close
+            this.closeSM(); // close sidemenu
         }
       }
     },
@@ -162,7 +167,39 @@ nav a.router-link-exact-active {
   color: #42afb9;
 }
 
-/* RouterLink */
+.web-title {
+  min-width: fit-content !important;
+  display: flex;
+  align-items: center;
+  margin-left: 3%;
+  font-size: 200% !important;
+}
+
+@media screen and (min-width: 2300px) {
+  .web-title {
+    font-size: 300% !important;
+  }
+}
+@media screen and (max-width: 600px), 
+(orientation: portrait) {
+  .web-title {
+    min-height: 200% !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .web-title {
+    font-size: 130% !important;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .web-title {
+    font-size: 120% !important;
+  }
+}
+
+
+/***MEDIA***/
 .overlay{
   position:fixed;
   background-color: rgba(67, 67, 67, 0.6);
@@ -173,12 +210,12 @@ nav a.router-link-exact-active {
   display:none;
 }
 
-.web-title {
-  min-width: fit-content !important;
+/***SIDEMENU***/
+#pg-content{
   display: flex;
   align-items: center;
-  margin-left: 3%;
-  font-size: 200% !important;
+  transition: margin-left 0.5s;
+  padding: 5px;
 }
 
 .open {
@@ -194,8 +231,7 @@ nav {
   justify-content: space-between;
   margin-left: 3vw !important;
 }
-/* SIDE MENU PART */
- 
+
 .sm-wrapper{
   display: flex;
   flex-direction: column;
@@ -225,7 +261,7 @@ nav {
   display: none;
 }
 
-.sidemenu a{
+.sidemenu a {
   margin:15px 20px;
   text-decoration: none;
   font-size: 15px;
@@ -243,9 +279,23 @@ nav {
   font-size: 20px;
   margin-left: 50px;
 }
+
+@media screen and (max-width: 600px), 
+(orientation: portrait) {
+  .open {
+    font-size: 100% !important;
+  }
+  nav {
+    height: 59px !important;
+  }
+}
+@media screen and (max-width: 365px) {
+  .open {
+    font-size: 100% !important;
+  }
+}
  
-  /* SIDE MENU HOVER EFFECT */
- 
+/* SIDEMENU HOVER EFFECT */
 .sm-wrapper {
   display: flex;
   justify-content: space-between;
@@ -271,6 +321,7 @@ nav {
   transition: 0.35s ease-in-out;
 }
 
+/***DROPDOWN SUBMENU***/
 .dropdown-content {
   width: 50px;
   display: none;
@@ -294,53 +345,17 @@ nav {
   margin-bottom: 40px;
   transition: 0.3s;
 }
- 
-#pg-content{
-  display: flex;
-  align-items: center;
-  transition: margin-left 0.5s;
-  padding: 5px;
-}
-
 
 @media screen and (max-width: 600px), 
 (orientation: portrait) {
-  .web-title {
-    min-height: 200% !important;
-  }
-  .open {
-    font-size: 100% !important;
-  }
   .section-title {
     min-width: 300px;
-  }
-  nav {
-    height: 59px !important;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .web-title {
-    font-size: 130% !important;
   }
 }
 
 @media screen and (max-width: 365px) {
-  .web-title {
-    font-size: 120% !important;
-  }
-  .open {
-    font-size: 100% !important;
-  }
-
   .section-title {
     min-width: 300px;
-  }
-}
-
-@media screen and (min-width: 2300px) {
-  .web-title {
-    font-size: 300% !important;
   }
 }
 </style>

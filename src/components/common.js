@@ -5,16 +5,15 @@ export default {
     ***/
     data(){
         return{
-            count: 0,
-            direction: 'forward',
-            frame: 2,
+            count: 0, ///Keep track of pages
             lastClick: 0,
             delay: 690,
         }
     },
+
+    ///Move forward or backward in <- and -> buttons
     created(){
         let self = this;
-        //var slide = setInterval(()=>this.slideLoop(this.direction),2000)
         window.addEventListener('scroll', this.handleScroll);
         document.onkeydown = function(e) {
             switch(e.which) {
@@ -31,6 +30,7 @@ export default {
     },
     
     methods:{
+        ///Readjust/fix slider position when resize window
         resizeAdjust() {
             let pageArr = document.getElementsByClassName("page");
             pageArr[this.count * 2].scrollIntoView({ 
@@ -44,36 +44,38 @@ export default {
                     inline: "end" });
             }
         },
-
+        
+        ///Invokes the website that is hidden from view (usually games).
         openIframe(id) {
             document.getElementById(id).style.visibility = "visible";
         },
         closeIframe(id){
             document.getElementById(id).style.visibility = "hidden";
         },
-        ////playVideo() invokes the overlay area that has a video on top of it.
+
+        ///Invokes the overlay area that has a video on top of it.
         playVideo(id){
             document.getElementById(id).style.display = "flex";
         },
-        //closeVideo() closes the overlay area.
         closeVideo(id){
             document.getElementById(id).style.display = "none";
         },
-        play3D(id){
-            document.getElementById(id).style.display = "flex";
-        },
-        close3D(){
-            document.getElementById(id).style.display = "none";
-        },
+        ///play3D(id){
+        ///    document.getElementById(id).style.display = "flex";
+        ///},
+        ///close3D(){
+        ///    document.getElementById(id).style.display = "none";
+        ///},
+
+        ///Escape the overlay area upon clicking out
         clickOut(cls){
             const el = document.getElementsByClassName(cls);
             for (let i=0; i < el.length; i += 1) {
                 el[i].style.display = "none";
             }
         },
-        //handleScroll() manages the scroll bar function. Every time a user clicks Next/Previous,
-        //it increases/decreases the area of a green bar that indicates where the reader is at wihtin
-        //the whole slide.
+
+        ///Manages the scroll bar behavior. 
         handleScroll() {
             let pageArr = document.getElementsByClassName("page");
             //var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -86,8 +88,10 @@ export default {
             console.log(this.count)
             
         },
-
+        
+        ///Move slide backward
         previous() {
+            ///Bouncing prevention
             if (this.lastClick >= (Date.now() - this.delay))
                 return;
             this.lastClick = Date.now();
@@ -98,7 +102,9 @@ export default {
             this.handleScroll()
         },
 
+        ///Move slide forward
         next() {
+            ///Bouncing prevention
             if (this.lastClick >= (Date.now() - this.delay))
                 return;
             this.lastClick = Date.now();
@@ -112,6 +118,7 @@ export default {
             console.log(pageArr.length);
         },
 
+        ///Creating and managing scroll behavior 
         scroll(position) {
             let el = document.getElementById("slide");
             let page = document.getElementsByClassName("page")[0].offsetWidth;
@@ -123,13 +130,8 @@ export default {
                 behavior: 'smooth'
             })
         },
-
-        ///resetScroll(){
-        ///    this.count = 0
-        ///    this.direction = "forward"
-        ///    this.scroll("reset")
-        ///},
  
+        ///For swipability on mobile devices
         touchStartMethod (touchEvent) {
             const posXStart = touchEvent.changedTouches[0].clientX;
             const posYStart = touchEvent.changedTouches[0].clientY;
@@ -148,7 +150,9 @@ export default {
             }
         },
 
-        /***mouseDownMethod (touchEvent) {
+        /*** 
+        ///For swipability with mouse 
+        mouseDownMethod (mouseEvent) {
             if (touchEvent.changedTouches.length !== 1) { // Only care if one finger is used
                 return;
             }
