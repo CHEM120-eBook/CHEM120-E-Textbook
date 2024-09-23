@@ -87,8 +87,16 @@
     </div>
 </template>
 
-<script unit2 src='@/components/common.js'>
+<script>
+    export default {
+        mounted() {
+            const script = document.createElement("script");
+            script.src ='@/components/common.js';
+            document.body.appendChild(script);
+        },
+    };
 </script>
+
 <style scoped src="@/components/style.css"></style>
 <style scoped>
 

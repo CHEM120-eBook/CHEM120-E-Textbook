@@ -1,13 +1,5 @@
 <template>
     <div class="background">
-        <!--
-            This "Element2Wide.vue" component shows up when the screen is wider than a certain number.
-            (See "ScrollView.vue")
-        -->
-        <!--
-            Code reference: Adeoye's blog article "How to build a Vuejs image slider" 
-            https://medium.com/@davidola360/how-to-create-a-vuejs-image-slider-60b4be844081
-        -->
         <div class="container" id="container" @keyup="created">
             <div class="nav-buttons">
                 <button @click="previous" class="control">
@@ -20,10 +12,15 @@
             
             <div id="overlay" class="overlay" @click="clickOut('overlay'); clickOut('media')">
                 <!--
-                    Overlay class rests upon the slide class. It contains video/3d model data and it expands when a user
-                    selects the thumbnail picture.
+                    This is a grey transparent overlay layer that rests upon the website, hidden from view until invoked.
+                    It serve the purpose of clicking out
                 -->
             </div>
+
+            <!--
+                Media class are videos, images, games and webistes which are enlarged into full screen upon invoked.
+                Some of the medias are hidden from view
+            -->
             <video id="media1" class="media" controls>
                 <source src="@/assets/Unit1-twoPeopleSharingSoda.mp4" type="video/mp4" showControl>
             </video>
@@ -44,6 +41,7 @@
 
             <img id="media9" class="media"  src="@/assets/Unit1CondensedToLewis.webp">
 
+            
             <p class="title">
                 Unit 1. Bonding, Introduction to Structural Representations
             </p>
@@ -258,7 +256,16 @@
     </div>
 </template>
 
-<script unit1 src='@/components/common.js'></script>
+<script>
+    export default {
+        mounted() {
+            const script = document.createElement("script");
+            script.src ='@/components/common.js';
+            document.body.appendChild(script);
+        },
+    };
+</script>
+
 <style scoped src="@/components/style.css"></style>
 
 <style scoped>

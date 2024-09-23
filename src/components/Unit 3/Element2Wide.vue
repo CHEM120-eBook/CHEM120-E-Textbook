@@ -245,5 +245,5 @@
     </div>
 </template>
 
-<script unit3 src='@/components/common.js'></script>
+<script src='@/components/common.js'></script>
 <style scoped src="@/components/style.css"></style>

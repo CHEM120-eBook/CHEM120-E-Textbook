@@ -123,5 +123,14 @@
     </div>
 </template>
 
-<script unit4 src='@/components/common.js'></script>
+<script>
+    export default {
+        mounted() {
+            const script = document.createElement("script");
+            script.src ='@/components/common.js';
+            document.body.appendChild(script);
+        },
+    };
+</script>
+
 <style scoped src="@/components/style.css"></style>
