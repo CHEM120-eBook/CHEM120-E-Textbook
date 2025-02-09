@@ -11,6 +11,10 @@ export default {
         }
     },
 
+    mounted() {
+        this.loadFile(); // Call loadFile() as soon as the component is mounted
+    },
+
     ///Move forward or backward in <- and -> buttons
     created(){
         let self = this;
@@ -26,10 +30,24 @@ export default {
                 break;
             } 
         };
-        window.addEventListener('resize', () => {this.resizeAdjust()})        
+        window.addEventListener('resize', () => {this.resizeAdjust()}) 
     },
     
     methods:{
+        async loadFile() {
+            try {
+              const response = await fetch('/content/myText.txt'); // Path to the file
+              if (!response.ok) {
+                throw new Error('Failed to load file');
+              }
+              this.fileContent = await response.text(); // Read the file content
+            } catch (error) {
+              console.error('Error loading file:', error);
+              this.fileContent = 'Error loading file content';
+            }
+        },
+
+
         ///Readjust/fix slider position when resize window
         resizeAdjust() {
             let pageArr = document.getElementsByClassName("page");

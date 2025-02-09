@@ -39,23 +39,14 @@
             <p class="title">
                 {{title}}
             </p>
-            <div id="slide" v-if="!gridEnabled" @touchstart="touchStartMethod" @mousedown="mouseDownMethod" @keyup.left="next()">
+            <div id="slide" v-if="!gridEnabled" @touchstart="touchStartMethod" @mousedown="mouseDownMethod" @keyup.left="next()" @click="isElementXPercentInViewport">
                 <div class="page" id="page1">
                     <p>
-                        <strong>{{ introduction }}</strong>
+                        <strong>{{ description }}</strong>
                         <li v-for="(item, index) in items" :key="index">{{ item }}</li>
                     </p>
                     <p style="margin-top: 27px;" >
-                        <div v-for="(section, index) in sections" :key="index">
-                            
-                            <p v-if="section.type === 'text'">{{ section.content }}</p>
-                            
-                            <img v-if="section.type === 'image'" :src="require('@/assets/Unit 4/test.jpg')" :alt="section.alt" />
-                            
-                            <video v-if="section.type === 'video'" :src="require('@/assets/Unit 4/cat.mp4')" controls>
-                                {{ section.title }}
-                            </video>
-                        </div>
+                        
                     </p>
                     <p>
                         
@@ -130,10 +121,6 @@
 </template>
 
 <script>
-    /// A function to create a div in a page if detect content
-    /// A function to check overflow
-    /// A funciton to handle overflow
-    /// A function to deal with porting photos sources
     import unit4 from '/home/shade/bioText/content/Unit 4/unit4.json';
     import unit5 from '/home/shade/bioText/content/Unit 5/unit5.json';
     
@@ -141,29 +128,25 @@
         data() {
             return {
                 units: {
-                    unit4, 
-                    unit5  
+                    unit4, // Make sure unit4 is imported
+                    unit5  // Make sure unit5 is imported
                 },
-                selectedUnit: 'unit4'
+                selectedUnit: 'unit5'
             };
         },
+    
         computed: {
             title() {
                 return this.units[this.selectedUnit]?.title || 'Default Title';
             },
-            introduction() {
-                return this.units[this.selectedUnit]?.introduction || 'Default Intro';
+            description() {
+                return this.units[this.selectedUnit]?.content|| 'Default Content';
             },
             items() {
                 return this.units[this.selectedUnit]?.items || [];
             },
-            sections() {
-                return this.units[this.selectedUnit]?.sections|| "Default Content";
-            }
         },
         mounted() {
-            document.querySelector(".slide").appendChild(newDiv)
-
             console.log(this.selectedUnit)
             const script = document.createElement("script");
             script.src ='@/components/common.js';

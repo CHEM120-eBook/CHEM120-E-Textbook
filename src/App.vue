@@ -12,8 +12,8 @@
                     <li><router-link to="/unit1">Unit 1. Bonding, Introduction to Structural Representations</router-link></li>
                     <li><router-link to="/unit2">Unit 2. More Structural Representations and Isomers</router-link></li>
                     <li><router-link to="/unit3">Unit 3. </router-link></li>
-                    <li><router-link to="/unit4">Unit 4. </router-link></li>
-                    <li><router-link to="/">Unit 5. </router-link></li>
+                    <li @click="selectUnit('unit4')"><router-link to="/unit4">Unit 4. </router-link></li>
+                    <li @click="selectUnit('unit5')"><router-link to="/unit5">Unit 5. </router-link></li>
                     <li><router-link to="/">Unit 6. </router-link></li>
                     <li><router-link to="/">Unit 7. </router-link></li>
                     <li><router-link to="/">Unit 8. </router-link></li>
@@ -82,12 +82,30 @@
 import { RouterLink, RouterView } from 'vue-router';
 
 export default{
+  data() {
+    return {
+      selectedUnit: ' ' // Initially, no unit is selected
+    };
+  },
+
+  provide() {
+    //sending data to any child component
+    return {
+      unit: this.selectedUnit,
+    };
+  },
+
   components:{
     RouterLink,
     RouterView
   },
 
   methods: {
+    selectUnit(unit) {
+      this.selectedUnit = unit;
+
+    },
+
     ///Open + close sidemenu
     openSM(){
       if (parseInt(document.getElementById("mySidemenu").style.width) == 450) {

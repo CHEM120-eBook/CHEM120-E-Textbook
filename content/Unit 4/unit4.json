@@ -1,0 +1,29 @@
+{
+  "title": "Unit 4",
+  "introduction": "This is a simple example of the introduction of unit 4.",
+  "items": [
+    "Item 1",
+    "Item 2",
+    "Item 3"
+  ],
+  "sections": [
+    {
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  "
+    },
+    {
+      "type": "text",
+      "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium"
+    },
+    {
+      "type": "image",
+      "src": "src/assets/Unit 4/test.jpg",
+      "alt": "cat pic"
+    },
+    {
+      "type": "video",
+      "src": "src/assets/Unit 4/cat.mp4",
+      "title": "cat vid"
+    }
+  ]
+}
