@@ -67,60 +67,6 @@
                         
                     </p>
                 </div>
-                <div class="page" id="page2" v-html="fileContent">
-                </div>
-                <div class="page" id="page">
-                    <p><strong>Bonding</strong></p>
-                    <p>
-                        
-                    </p>
-                    <p>
-                    
-                    </p>
-                    <p>
-
-                    </p>
-                </div>
-                <div class="page" id="page">
-                    <p>
-                    </p>
-                    <p>
-                    </p>
-                </div>
-                <div class="page" id="page">
-                    <p>
-                    </p>
-                    <p style="margin-bottom: 30px;">
-                    </p>
-                </div>
-                <div class="page" id="page">
-                    <p style="margin-bottom: 30px;">
-                    </p>
-                    <p style="margin-top: 30px;">
-                    </p>
-                </div>
-                <div class="page" id="page">
-                    <p style="text-indent: 0%;">
-                    </p>
-                    <img src="@/assets/Unit1-BondSymbolTable.webp" style="margin:30px auto; width: 50%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media5')">
-                    <p>
-                    </p>
-                </div>
-                <div class="page" id="page">
-                    <p><strong>Representing structures</strong></p>
-                    <p>               
-                    </p>
-                    <p>
-                    </p>
-                    <p>
-                    </p>
-                </div>
-                <div class="page" id="page">
-                    <p style="text-indent: 0%;">
-                    </p>
-                    <p>
-                    </p>
-                </div>
             </div>
             <div class="progress-container">
                 <div class="progress-bar" id="myBar"></div>
@@ -159,17 +105,56 @@
             },
             sections() {
                 return this.units[this.selectedUnit]?.sections|| "Default Content";
-            }
+            },
         },
+
         mounted() {
-            document.querySelector(".slide").appendChild(newDiv)
+            let pageDiv = document.createElement("div");
+            pageDiv.setAttribute("id", "page");
+            pageDiv.setAttribute("class", "page");
+
+            document.getElementById("slide").appendChild(pageDiv);
+
+            for (const key in this.units[this.selectedUnit]) {
+                console.log(`${key}:`);
+                
+                const value = unit4[key];
+                
+                if (Array.isArray(value)) {
+                    // Loop through array values
+                    for (let i = 0; i < value.length; i++) {
+                        if (typeof value[i] === "object" && value !== null) {
+                        // Loop through object values
+                            for (const innerKey in value[i]) {
+                                console.log(`  ${innerKey}: ${value[i][innerKey]}`);
+                                //handle accordingly according to type of content
+                            }
+                            continue;
+                        }
+                        console.log(`  [${i}]:`, value[i]);
+                        ///Append the content of the list into ls tag in html
+                    }
+                } else {
+                    if (key == "title") {
+                        continue;
+                    }
+                    let content = document.createElement("p");
+                    content.textContent = unit4[key];
+                    document.getElementById("page").appendChild(content);
+                    console.log(`  ${value}`)
+                }
+            }
 
             console.log(this.selectedUnit)
             const script = document.createElement("script");
             script.src ='@/components/common.js';
             document.body.appendChild(script);
         },
+
+        method: {
+            
+        }
     };
 </script>
 
-<style scoped src="@/components/style.css"></style>
+<style src="@/components/style.css"></style>
