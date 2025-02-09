@@ -114,6 +114,7 @@
             pageDiv.setAttribute("class", "page");
 
             document.getElementById("slide").appendChild(pageDiv);
+            
 
             for (const key in this.units[this.selectedUnit]) {
                 console.log(`${key}:`);
@@ -128,9 +129,20 @@
                             for (const innerKey in value[i]) {
                                 console.log(`  ${innerKey}: ${value[i][innerKey]}`);
                                 //handle accordingly according to type of content
+                                if (value[i][innerKey] == "text") {
+                                    let content = document.createElement("p");
+                                    content.textContent = value[i]["content"];
+                                    document.getElementById("page").appendChild(content);
+                                }
                             }
                             continue;
                         }
+                        let content = document.createElement("p");
+                        let list = document.createElement("li");
+                        list.textContent = value[i];
+                        content.appendChild(list);
+                        document.getElementById("page").appendChild(content);
+                        
                         console.log(`  [${i}]:`, value[i]);
                         ///Append the content of the list into ls tag in html
                     }
@@ -138,10 +150,12 @@
                     if (key == "title") {
                         continue;
                     }
+                    let bold = document.createElement("strong");
                     let content = document.createElement("p");
-                    content.textContent = unit4[key];
+                    bold.textContent = unit4[key];
+                    content.appendChild(bold);
                     document.getElementById("page").appendChild(content);
-                    console.log(`  ${value}`)
+                    console.log(`  ${unit4[key]}`);
                 }
             }
 
