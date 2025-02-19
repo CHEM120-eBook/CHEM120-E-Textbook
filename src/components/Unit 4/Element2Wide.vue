@@ -206,6 +206,7 @@
                     break;
                 } 
             };
+            
             window.addEventListener('resize', () => {this.resizeAdjust()}) 
         },
 
@@ -250,6 +251,18 @@
                         block: "start", 
                         inline: "end" });
                 }
+                ///scale down elements in page until it fit (problem with this implementation: high runtime)
+                // let pages = document.querySelectorAll(".page")
+                // for (let i = 0; i < pages.length; i += 1) {
+                //     while (!this.isOverflow(pages[i])) { 
+                //         ///Scale up the element until overflow
+                //     }
+                    
+                //     while (this.isOverflow(pages[i])) {
+                //         ///scale down the element until no longer overflow
+                //     }    
+                // }
+                ///scale up elem
             },
             
             ///Invokes the website that is hidden from view (usually games).
