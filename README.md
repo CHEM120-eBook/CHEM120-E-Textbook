@@ -10,21 +10,21 @@ Organic chemistry is a highly visual subject  since organic compounds are 3D obj
 - Inside each unit folder, there will be a JSON file contain the content of the corresponding unit, adjust the content inside this folder to update content
 - Adjust/Add the content you want with the following syntax:
 
-    "title": Unit title,
-    "introduction": short introduction of the unit,
-    "items": [
-        main ideas of the unit
-    ],
-    "type": content type, "text", "image", or "video", 
-    "content": (for "text" type content only) the text content you want to add,
-    "src": (for "image", and "video" type content only), source of your photo or video *
-    "title": (for "image", and "video" type content only) title of the image or video
+    "title": Unit title <br />
+    "introduction": short introduction of the unit <br />
+    "items": [ <br />
+        main ideas of the unit <br />
+    ], <br />
+    "type": content type, "text", "image", or "video" <br />
+    "content": (for "text" type content only) the text content you want to add <br />
+    "src": (for "image", and "video" type content only), source of your photo or video [1] <br />
+    "title": (for "image", and "video" type content only) title of the image or video <br />
 
 !!! The main content ("text", "image" or "video") should the add to the ```section``` part
 
 !!! The content added must all be in double quotes (Ex: "cat video")
 
-*  The video or image should be located in public folder, in the corresponding unit's folder
+[1] The video or image should be located in public folder, in the corresponding unit's folder
 
 ## Project setup
 ```
