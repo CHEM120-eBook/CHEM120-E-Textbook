@@ -50,9 +50,9 @@
                             
                             <p v-if="section.type === 'text'">{{ section.content }}</p>
                             
-                            <img v-if="section.type === 'image'" :src="require('/public/assets/unit4/test.jpg')" :alt="section.alt" />
+                            <img v-if="section.type === 'image'" :src="require('/public/content/Unit 4/test.jpg')" :alt="section.alt" />
                             
-                            <video v-if="section.type === 'video'" :src="require('/public/assets/unit4/cat.mp4')" controls>
+                            <video v-if="section.type === 'video'" :src="require('/public/content/Unit 4/cat.mp4')" controls>
                                 {{ section.title }}
                             </video>
 
@@ -83,9 +83,9 @@
     /// A function to check overflow
     /// A funciton to handle overflow
     /// A function to deal with porting photos sources
-    import unit3 from '/home/shade/bioText/content/Unit 3/unit3.json';
-    import unit4 from '/home/shade/bioText/content/Unit 4/unit4.json';
-    import unit5 from '/home/shade/bioText/content/Unit 5/unit5.json';
+    import unit3 from '/public/content/Unit 3/unit3.json';
+    import unit4 from '/public/content/Unit 4/unit4.json';
+    import unit5 from '/public/content/Unit 5/unit5.json';
     
     export default {
         props: ["btnText"],
@@ -404,4 +404,394 @@
     };
 </script>
 
-<style src="@/components/style.css"></style>
+<style>
+.title {
+  font-family: "League Spartan", sans-serif;
+  margin: 1vw;
+  color:aliceblue; 
+  font-size: 230%;
+}
+
+.background {
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 95vh ;
+}
+
+@media (max-width: 600px),
+(orientation:portrait) {
+  .background {
+    height: 100vh;
+  }
+}
+
+/***Slide***/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  min-width: 97vw !important;
+  padding-bottom: 0;
+  height:100%;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+
+#slide {
+  height: 80vh !important;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  align-items: flex-start;
+  text-indent: 2%;
+}
+
+#slide > div {
+  padding: 2%;
+  min-width: 50%;
+  height: 100%;
+  min-height: 400px;
+  padding-right: 2%;
+  padding-left:2%;
+  box-sizing: border-box;
+  background-color: aliceblue;
+  text-align: left;
+  margin:0;
+  overflow-y: scroll !important; 
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+  
+  }
+  #slide > div::-webkit-scrollbar {
+  display: none;
+  }
+
+  #slide > .page > p {
+    margin: 12.5px;
+    font-size: 120%;
+    font-family:"League Spartan",sans-serif;
+    text-align: justify;
+  }
+
+#page2 > div > div > img {
+  max-width:130px;
+}
+
+@media (max-width: 600px),
+(orientation:portrait) {
+  .background {
+    height: 100vh;
+  }
+  #slide > div { 
+      min-width: 100%;
+  }
+  .title {
+    margin: 5%;
+    font-size: 5vw;
+  }
+  .container {
+      min-width: 85.3vw;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  #slide > .page > p,
+  .wrap-text {
+    font-size: 70% !important;
+  }
+  #slide {
+    overflow-y: scroll;
+  }
+  .background{
+    height: 100vh;
+  }
+  .title {
+    font-size: 129%;
+  }
+  .podcast-text {
+    font-size: 70% !important;
+  }
+}
+
+@media screen and (min-height: 900px) {
+  #slide > .page > p,
+  .wrap-text {
+      font-size: 160% !important;
+  }
+  #slide > div > div > p {
+      font-size: 120%;
+  }
+}
+
+@media screen and (min-height: 1200px) {
+  #slide > .page > p {
+      font-size: 210%;
+  }
+  #slide > div > div > p {
+      font-size: 180%;
+  }
+  .wrap-text {
+    font-size: 210%;
+  }
+}
+
+@media screen and (min-width: 2300px) {
+  #page2 > div > div > img {
+      display: none;
+  }
+  #slide > .page > p {
+      font-size: 250%;
+  }
+  #slide > div > div > p {
+      font-size: 200%;
+
+  }
+}
+/***MEDIA (GENERAL)***/
+.overlay{
+  position:fixed;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: rgba(67, 67, 67, 0.6);
+  width:100%;
+  height:120%;
+  color:white;
+  cursor: pointer;
+  display:none;
+}
+
+.media {
+  width: 80%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 15%;
+  bottom: 0;
+  margin: auto;
+  color:white;
+  cursor: pointer;
+  display: none;
+}
+
+/***PODCAST***/
+.podcast {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-around;
+  height: 18vh;
+}
+
+/***VIDEO***/
+.video {
+  display: flex; 
+  overflow: hidden;
+  flex-direction: column; 
+  height: 29vh;
+  width: 70%;
+  padding:2%;
+  color: #FFFFFF;
+  background: #212121;
+  text-align: center;
+  border-radius: 20px;
+  margin-left: auto; 
+  margin-right: auto;
+  overflow: hidden
+}
+
+.vid-title {
+  margin-bottom: 3vh !important;
+  font-size: 16px;
+  text-align: center;
+}
+
+.thumbnail {
+  width: 40%; 
+  height: 19vh; 
+  cursor: pointer;
+}
+
+@media (max-width: 600px) and (orientation:portrait) {
+  .thumbnail {
+    width: 70%;
+  }
+}
+
+/***CONTROL BUTTONS***/
+.control {
+  background: transparent;
+  opacity: 0.3;
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+  justify-self: center;
+  color: rgb(255, 255, 130) ;
+  border: none;
+  height: 70px;
+  font-size: 90px;
+  font-weight: bold;
+}
+
+.nav-buttons {
+  background-color: rgba(128, 128, 128, 0.1);
+  position: absolute;
+  display: flex;
+  width: 140px;
+  justify-content: center !important;
+  justify-self: center !important;
+  border-radius: 50px;
+  right: 3.5%;
+  bottom: 5%;
+}
+
+.nav-buttons :hover {
+  opacity: 0.5;
+}
+
+@media (max-width: 600px),
+(orientation:portrait) {
+  .control {
+      font-size: 70px;
+  }
+  .nav-buttons {
+      width: 100px;
+  }
+}
+
+/***ANSWER BOX***/
+#slide > div > textarea{
+  margin: 0 4% 4% 4%;
+  width:95%;
+  height:10%;
+}
+
+/***PROGRESS CONTAINER***/
+.progress-container {
+width: 100%;
+height: 1%;
+background: #cccccc;
+margin:0;
+}
+
+.progress-bar {
+height: 8px;
+background: #04AA6D;
+width: 0%;
+min-width:0%;
+max-width:100%;
+}
+
+.periodic-table-container {
+    cursor: pointer; 
+    display: flex; align-items: center; 
+    justify-items: center;
+}
+.periodic-table {
+    width:80%; 
+    margin: 20px;
+}
+
+.podcast-text {
+  text-indent: 0%;
+  margin: 10px;
+  font-size: 100%;
+  font-family: "League Spartan",sans-serif;
+  text-align: justify;
+}
+
+.podcast-container {
+  display: flex; 
+  overflow: hidden;
+  flex-direction: column; 
+  min-height: 10vh;
+  padding:2%;
+  color: #FFFFFF;
+  background: #212121;
+  text-align: center;
+  border-radius: 20px;
+  display:block;
+  margin:0;
+}
+
+.wrap-img-container {
+    display: flex; 
+    flex-direction: column !important; 
+    align-items: center;
+    justify-content: space-around; 
+    width:50%;
+}
+
+.wrap-img {
+    width:50%; 
+    cursor: pointer;
+}
+
+.bond-table {
+    margin:30px 25%; 
+    width: 50%; 
+    cursor: pointer;
+}
+
+/***EXCERCISES***/
+.excercise {
+  margin:30px 4%; 
+  width: 90%; 
+  cursor: pointer;
+}
+
+.ex-answer {
+  margin: 0% 4% !important;
+  width:95% !important;
+  height:7% !important;
+}
+
+.wrap-text {
+  color: black;
+  max-width: 50%;
+  margin: 12.5px;
+  font-size: 120%;
+  font-family:"League Spartan",sans-serif;
+  text-align: justify;
+}
+
+.wrap-textbox {
+  display:flex; 
+  flex-direction: row !important; 
+  background: none !important; 
+  width: 100%;
+  margin: 0;
+}
+
+.wrap-up-head {
+  font-style: italic; 
+  margin-bottom: 0% !important;
+}
+
+.wrap-up-content {
+  margin-top: 0% !important;
+}
+
+/***GAME***/
+/* #game1 {
+    visibility: hidden;
+}
+
+iframe{
+    position:fixed; 
+    top:0; 
+    left:0; 
+    bottom:0; 
+    right:0; 
+    width:100%; 
+    height:100%; 
+    border:none; 
+    margin:0; 
+    padding:0; 
+    overflow:hidden; 
+    background-color: gray;
+    z-index: 9;
+} */
+</style>
