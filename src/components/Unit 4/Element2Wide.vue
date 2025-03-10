@@ -37,7 +37,7 @@
             <img id="media9" class="media" width="80%" src="">
 
             <p class="title">
-                {{title}}
+                {{title}} 
             </p>
             <div id="slide" v-if="!gridEnabled" @touchstart="touchStartMethod" @mousedown="mouseDownMethod" @keyup.left="next()">
                 <div class="page" id="1">
@@ -83,17 +83,20 @@
     /// A function to check overflow
     /// A funciton to handle overflow
     /// A function to deal with porting photos sources
+    import unit3 from '/home/shade/bioText/content/Unit 3/unit3.json';
     import unit4 from '/home/shade/bioText/content/Unit 4/unit4.json';
     import unit5 from '/home/shade/bioText/content/Unit 5/unit5.json';
     
     export default {
+        props: ["btnText"],
         data() {
             return {
                 units: {
+                    unit3,
                     unit4, 
-                    unit5  
+                    unit5
                 },
-                selectedUnit: 'unit4',
+                selectedUnit: this.btnText,
 
                 count: 0, ///Keep track of pages
                 lastClick: 0,
@@ -206,7 +209,10 @@
                     break;
                 } 
             };
-            
+
+
+            ///When selectedUnit is updated, reload this component and this component only (not the app)
+
             window.addEventListener('resize', () => {this.resizeAdjust()}) 
         },
 
