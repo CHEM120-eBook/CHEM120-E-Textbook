@@ -57,12 +57,12 @@
     },
     {
       "type": "image",
-      "src": "unit4/cat.mp4",
+      "src": "https://raw.githubusercontent.com/CHEM120-eBook/CHEM120-E-Textbook/refs/heads/main/public/content/Unit%204/test.jpg",
       "alt": "cat pic"
     },
     {
       "type": "video",
-      "src": "unit4/test.jpg",
+      "src": "https://raw.githubusercontent.com/CHEM120-eBook/CHEM120-E-Textbook/refs/heads/main/public/content/Unit%204/cat.mp4",
       "title": "cat vid"
     }
   ]

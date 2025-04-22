@@ -56,7 +56,7 @@
                                 {{ section.title }}
                             </video>
 
-
+                            
                         </div>
                     </p>
                     <p>
@@ -157,11 +157,24 @@
                                         break;
                                     case "image":
                                         let imgContent = document.createElement("img");
-                                        imgContent.setAttribute("src", "/public/assets/" + value[i]["src"]);
+                                        
+                                        imgContent.setAttribute("src", value[i]["src"]);
                                         pageEl.appendChild(imgContent);
-                                        console.log("motherfucker why doesn't this work: " + imgContent.src)
+                                        
                                         break;
                                     case "video":
+                                        let vidContainer = document.createElement("video");
+
+                                        let vidSrc = document.createElement("source");
+                                        
+                                        vidSrc.setAttribute("src", value[i]["src"]);
+                                        vidSrc.setAttribute("type", "video/mp4")
+                                        vidContainer.setAttribute("controls", "true");
+
+                                        vidContainer.appendChild(vidSrc)
+                                        pageEl.appendChild(vidContainer);
+                                        
+                                        break;
                                 }
                             }
                             continue;
