@@ -79,10 +79,11 @@
 </template>
 
 <script>
-    /// A function to create a div in a page if detect content
-    /// A function to check overflow
-    /// A funciton to handle overflow
-    /// A function to deal with porting photos sources
+    /// !!! PROBLEMS: 
+    // - Progress bar doesn't update when resize
+    // - Images need to be set as percentage to the overall page
+    // - Problem with ScrollIntoView functionality
+
     import unit3 from '/public/content/Unit 3/unit3.json';
     import unit4 from '/public/content/Unit 4/unit4.json';
     import unit5 from '/public/content/Unit 5/unit5.json';
@@ -129,11 +130,11 @@
             
             //Read data from JSON files and display them onto the website based on key/"type"
             for (const key in this.units[this.selectedUnit]) {
-                console.log(`${key}:`);
+                // console.log(`${key}:`);
                 
                 const value = this.units[this.selectedUnit][key];
                     
-                console.log(`Next page id will be ${parseInt(pageEl.id, 10) + 1}`)
+                // console.log(`Next page id will be ${parseInt(pageEl.id, 10) + 1}`)
                 
                 pageEl = this.handleOverflow.call(this, pageEl)
                 
@@ -147,7 +148,8 @@
                         if (typeof value[i] === "object" && value !== null) {
                         // Loop through object values
                             for (const innerKey in value[i]) {
-                                console.log(`  ${innerKey}: ${value[i][innerKey]}`);
+                                // console.log(`  ${innerKey}: ${value[i][innerKey]}`);
+
                                 //handle accordingly according to type of content
                                 switch (value[i][innerKey]) {
                                     case "text":
@@ -185,7 +187,8 @@
                         content.appendChild(list);
                         pageEl.appendChild(content);
                         
-                        console.log(`  [${i}]:`, value[i]);
+                        // console.log(`  [${i}]:`, value[i]);
+
                         ///Append the content of the list into ls tag in html
                     }
                 } else {
@@ -197,11 +200,11 @@
                     bold.textContent = this.units[this.selectedUnit][key];
                     content.appendChild(bold);
                     pageEl.appendChild(content);
-                    console.log(`  ${this.units[this.selectedUnit][key]}`);
+                    // console.log(`  ${this.units[this.selectedUnit][key]}`);
                 }
             }
-            console.log(`Page is ${this.isOverflow(pageEl)}`)
-            console.log(this.selectedUnit)
+            // console.log(`Page is ${this.isOverflow(pageEl)}`)
+            // console.log(this.selectedUnit)
 
             if (parseInt(pageEl.id) % 2 != 0) {
                 this.createNewPage(pageEl)
@@ -242,7 +245,7 @@
                 newPage.setAttribute("class", "page");
                 document.getElementById("slide").appendChild(newPage);
 
-                console.log(`Created new page with id: ${newPage.id}`);
+                // console.log(`Created new page with id: ${newPage.id}`);
 
                 return newPage;
             },
@@ -250,7 +253,7 @@
             // Helper function to handle overflow
             handleOverflow(pageElement) {
                 if (this.isOverflow(pageElement)) {
-                    console.log("Overflow detected, creating new page.");
+                    // console.log("Overflow detected, creating new page.");
 
                     return this.createNewPage(pageElement);
                 }
@@ -299,6 +302,7 @@
             closeVideo(id){
                 document.getElementById(id).style.display = "none";
             },
+            
             ///play3D(id){
             ///    document.getElementById(id).style.display = "flex";
             ///},
@@ -325,7 +329,7 @@
                 var scrolled = (window.innerWidth <= window.innerHeight) ? totalWidth / (pageArr.length - 1) : totalWidth / (pageArr.length/2 - 1); 
                 document.getElementById("myBar").style.width = scrolled*this.count + "px";
                 console.log(this.count)
-                
+                console.log(pageArr.length)
             },
             
             ///Move slide backward
@@ -354,7 +358,7 @@
                     this.scroll("next")
                 }
                 this.handleScroll()
-                console.log(pageArr.length);
+                // console.log(pageArr.length);
             },
 
             ///Creating and managing scroll behavior 
@@ -746,6 +750,12 @@ max-width:100%;
     margin:30px 25%; 
     width: 50%; 
     cursor: pointer;
+}
+
+/***PROGRESS BAR***/
+#myBar {
+    background-color: rgba(4,170,109,255); 
+    height: 100%;
 }
 
 /***EXCERCISES***/

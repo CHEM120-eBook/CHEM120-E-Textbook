@@ -30,7 +30,6 @@ export default {
     },
     
     methods:{
-
         ///Readjust/fix slider position when resize window
         resizeAdjust() {
             let pageArr = document.getElementsByClassName("page");
@@ -85,9 +84,8 @@ export default {
             //var totalWidth = screen.availWidth;
             var totalWidth = document.getElementById("slide").offsetWidth;
             var scrolled = (window.innerWidth <= window.innerHeight) ? totalWidth / (pageArr.length - 1) : totalWidth / (pageArr.length/2 - 1); 
-            document.getElementById("myBar").style.width = scrolled*this.count + "px";
+            document.getElementById("myBar").style.width = scrolled * this.count + "px";
             console.log(this.count)
-            
         },
         
         ///Move slide backward
